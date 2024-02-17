@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Community Event Network</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+ /* Navigation */
+ /* Navigation */
+ .navbar {
+            background-color: #343a40;
+            padding: 15px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-weight: bold;
+            font-family: 'Crimson Text', serif;
+        }
+        .logo {
+            max-width: 5%; /* Allow logo to resize proportionally */
+            height: auto;
+            margin-right: 8px; /* Adjust margin as needed */
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://picsum.photos/1920/1080');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2 {
+            color: #0b0b0b;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #151515;
+            line-height: 1.6;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 250px;
+            padding: 20px;
+            background-color: rgba(245, 242, 242, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        /* Why Choose Us Section */
+        #why-choose-us {
+            background: linear-gradient(135deg, #f9f9f9, #e9e9e9);
+            padding: 60px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .reason {
+            display: inline-block;
+            width: calc(25% - 20px);
+            margin: 0 10px;
+            text-align: center;
+            vertical-align: top;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .reason img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .reason-text h3 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .reason-text p {
+            color: #666;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }
+
+        /* Copyright Section */
+        .copyright-section {
+            background-color: #343a40;
+            padding: 20px 0;
+            color: #fcf3f3;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 10px;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+
+        .status-enabled {
+            color: #28a745;
+        }
+
+        .status-disabled {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <img src="https://picsum.photos/200" alt="Community Event Network Logo" class="logo">
+                <a class="navbar-brand" href="#">Community Event Network</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" id="Home" href="home1.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="About Us" href="aboutus.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="Events" href="event.php">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="gallery" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="Contact Us" href="contactus.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="Login" href="login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <main>
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1043/1043829.png" alt="Event Icon">
+                    <h3>Diverse Events</h3>
+                    <p>Experience a wide range of events catering to various interests, from cultural festivals to educational workshops.</p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Networking Icon">
+                    <h3>Networking Opportunities</h3>
+                    <p>Connect with like-minded individuals and expand your network through our community-driven events.</p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png" alt="Community Engagement Icon">
+                    <h3>Community Engagement</h3>
+                    <p>Get involved in meaningful community initiatives and contribute to positive change in our society.</p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3745/3745634.png" alt="Collaborative Spirit Icon">
+                    <h3>Collaborative Spirit</h3>
+                    <p>Join hands with fellow community members and embrace the power of collaboration in achieving common goals.</p>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us">
+            <h2>Why Choose Us</h2>
+            <div class="reasons-container" style="display: flex; justify-content: space-between;">
+                <div class="reason">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2714/2714451.png" alt="Transparent Process Icon">
+                    <div class="reason-text">
+                        <h3>Transparent Process</h3>
+                        <p>At Community Event Network, we pride ourselves on our transparent process. From event planning to execution, we ensure clarity and openness every step of the way. Our commitment to transparency builds trust and fosters strong relationships with our clients and partners.</p>
+                    </div>
+                </div>
+                <div class="reason">
+                    <img src="https://cdn-icons-png.flaticon.com/512/876/876051.png" alt="Quality Guarantee Icon">
+                    <div class="reason-text">
+                        <h3>Quality Guarantee</h3>
+                        <p>Quality is at the forefront of everything we do at Community Event Network. We uphold the highest standards of excellence in event management, ensuring that every detail is meticulously planned and executed to perfection. With our quality guarantee, you can rest assured that your event will be a memorable and successful experience.</p>
+                    </div>
+                </div>
+                <div class="reason">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3402/3402106.png" alt="Responsive Support Icon">
+                    <div class="reason-text">
+                        <h3>Responsive Support</h3>
+                        <p>At Community Event Network, we prioritize responsive support to meet the needs of our clients and partners. Our dedicated team is readily available to address inquiries, provide assistance, and offer solutions to ensure a smooth and seamless experience. With our responsive support, you can trust that we'll be there for you every step of the way.</p>
+                    </div>
+                </div>
+                <div class="reason">
+                    <img src="https://cdn-icons-png.flaticon.com/512/542/542051.png" alt="Innovative Solutions Icon">
+                    <div class="reason-text">
+                        <h3>Innovative Solutions</h3>
+                        <p>At Community Event Network, we're committed to delivering innovative solutions that exceed expectations and drive success. From creative event concepts to cutting-edge technology solutions, we leverage innovation to create unique and memorable experiences. With our innovative approach, we'll help you stand out from the crowd and achieve your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+   <!-- New Engaging Section -->
+<section id="new-section" style="background-color: #f9f9f9; padding: 50px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); text-align: center;">
+    <h2 style="color: #333; font-size: 2.5rem; margin-bottom: 20px;">Explore What's New</h2>
+    <div class="card-container" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <div class="card" style="width: 300px; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2818/2818852.png" alt="New Feature Icon" style="width: 100px; margin-bottom: 20px;">
+            <h3 style="color: #333; font-size: 1.8rem; margin-bottom: 10px;">Exciting New Features</h3>
+            <p style="color: #666; font-size: 1.2rem; line-height: 1.5;">Discover the latest features and updates added to the Community Event Network platform. Stay ahead with cutting-edge technology and innovative solutions.</p>
+        </div>
+        <div class="card" style="width: 300px; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2304/2304940.png" alt="New Content Icon" style="width: 100px; margin-bottom: 20px;">
+            <h3 style="color: #333; font-size: 1.8rem; margin-bottom: 10px;">Fresh Content Updates</h3>
+            <p style="color: #666; font-size: 1.2rem; line-height: 1.5;">Explore the latest content updates on the Community Event Network platform, including articles, videos, and resources curated for our community.</p>
+        </div>
+    </div>
+    <a href="#" style="display: inline-block; background-color: #ff6f61; color: #fff; font-weight: bold; text-decoration: none; padding: 12px 30px; border-radius: 30px; margin-top: 30px; transition: background-color 0.3s;">Start Exploring</a>
+</section>
+
+<!-- Get Involved Section -->
+<section id="involved" style="background-color: #e9e9e9; padding: 50px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); text-align: center; margin-top: 30px;">
+    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+        <!-- Details on one side -->
+        <div style="flex: 1; padding: 20px;">
+            <h2 style="color: #333; font-size: 2.5rem; margin-bottom: 20px;">Join Our Community</h2>
+            <p style="color: #666; font-size: 1.2rem; line-height: 1.5;">Become part of our vibrant and inclusive community at the Community Event Network. Engage with like-minded individuals and share your passion for events and collaboration.</p>
+            <a href="#" style="display: inline-block; background-color: #009688; color: #fff; font-weight: bold; text-decoration: none; padding: 12px 30px; border-radius: 30px; margin-top: 30px; transition: background-color 0.3s;">Get Involved</a>
+        </div>
+        <!-- Cards on the other side -->
+        <div class="card-container" style="flex: 1; display: flex; justify-content: space-around; gap: 20px; flex-wrap: wrap;">
+            <div class="card" style="width: 300px; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <img src="https://cdn-icons-png.flaticon.com/512/1785/1785656.png" alt="Community Icon" style="width: 100px; margin-bottom: 20px;">
+                <h3 style="color: #333; font-size: 1.8rem; margin-bottom: 10px;">Vibrant Community</h3>
+                <p style="color: #666; font-size: 1.2rem; line-height: 1.5;">Join our vibrant community and engage with like-minded individuals.</p>
+            </div>
+            <div class="card" style="width: 300px; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <img src="https://cdn-icons-png.flaticon.com/512/4135/4135953.png" alt="Social Gathering Icon" style="width: 100px; margin-bottom: 20px;">
+                <h3 style="color: #333; font-size: 1.8rem; margin-bottom: 10px;">Social Gatherings</h3>
+                <p style="color: #666; font-size: 1.2rem; line-height: 1.5;">Connect with like-minded individuals at our social gatherings and networking events. Build meaningful relationships and expand your social circle in a relaxed and welcoming environment.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</section>
+<!-- Copyright Section -->
+<section class="copyright-section">
+    <div class="container">
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Community Event Network. All rights reserved.</p>
+    </div>
+</section>
+
+    </main>
+
+</body>
+</html>

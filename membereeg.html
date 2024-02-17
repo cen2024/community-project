@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-image: url("https://picsum.photos/2000/1200");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin: auto;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-control {
+            width: 100%;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .btn-primary:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+        .btn-secondary {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-secondary:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+        /* Arrange sections horizontally */
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            width: 30%; /* Three sections in a row */
+        }
+        /* Small screen adjustment */
+        @media (max-width: 768px) {
+            .form-group {
+                width: 100%; /* Full width on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+                    <div class="form-container">
+                        <h2 class="text-center mb-4"><i class="fas fa-user-plus"></i> Member Registration Form</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cm_community"><i class="fas fa-users"></i> Community:</label>
+                                <select id="cm_community" name="cm_community" class="form-control" required>
+                                    <option value="">Select community</option>
+                                    <option value="Student">Student</option>
+                                    <option value="Professional">Professional</option>
+                                    <option value="Entrepreneur">Entrepreneur</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cm_sub_community"><i class="fas fa-users"></i> Sub-community:</label>
+                                <select id="cm_sub_community" name="cm_sub_community" class="form-control" required>
+                                    <option value="">Select sub-community</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cm_category"><i class="fas fa-tags"></i> Category:</label>
+                                <select id="cm_category" name="cm_category" class="form-control" required>
+                                    <option value="">Select a category</option>
+                                    <option value="Area">Area</option>
+                                    <option value="Institute">Institute</option>
+                                    <option value="Industry">Industry</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cm_state"><i class="fas fa-map-marker-alt"></i> State:</label>
+                                <select id="cm_state" name="cm_state" class="form-control" required>
+                                    <option value="">Select a state</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cm_dist"><i class="fas fa-map-marker-alt"></i> District:</label>
+                                <select id="cm_dist" name="cm_dist" class="form-control" required>
+                                    <option value="">Select a district</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cm_pincode"><i class="fas fa-map-marker-alt"></i> Pincode:</label>
+                                <select id="cm_pincode" name="cm_pincode" class="form-control" required>
+                                    <option value="">Select a pincode</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="cm_name"><i class="fas fa-user"></i> Name:</label>
+                                <input type="text" id="cm_name" name="cm_name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender"><i class="fas fa-venus-mars"></i> Gender:</label>
+                                <select id="gender" name="gender" class="form-control" required>
+                                    <option value="">Select gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="cm_email"><i class="fas fa-envelope"></i> Email:</label>
+                                <input type="email" id="cm_email" name="cm_email" class="form-control" required>
+                            </div>
+                            <div class="form-group col">
+                                <label for="cm_contact"><i class="fas fa-phone"></i> Contact:</label>
+                                <input type="tel" id="cm_contact" name="cm_contact" class="form-control" pattern="[0-9]{10}" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="cm_pass"><i class="fas fa-lock"></i> Password:</label>
+                                <div class="input-group">
+                                    <input type="password" id="cm_pass" name="cm_pass" class="form-control" required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="togglePassword()"><i class="fas fa-eye"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col">
+                                <label for="confirmPassword"><i class="fas fa-lock"></i> Confirm Password:</label>
+                                <div class="input-group">
+                                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="toggleConfirmPassword()"><i class="fas fa-eye"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="cm_security_q1"><i class="fas fa-question"></i> Security Question 1:</label>
+                                <select id="cm_security_q1" name="cm_security_q1" class="form-control" required>
+                                    <option value="">Select a Security Question</option>
+                                    <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                                    <option value="What is the name of your first pet?">What is the name of your first pet?</option>
+                                    <option value="What is your favorite movie?">What is your favorite movie?</option>
+                                </select>
+                            </div>
+                            <div class="form-group col">
+                                <label for="cm_security_ans1"><i class="fas fa-key"></i> Security Answer 1:</label>
+                                <input type="text" id="cm_security_ans1" name="cm_security_ans1" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="cm_security_q2"><i class="fas fa-question"></i> Security Question 2:</label>
+                                <select id="cm_security_q2" name="cm_security_q2" class="form-control" required>
+                                    <option value="">Select a Security Question</option>
+                                    <option value="What is the name of your hometown?">What is the name of your hometown?</option>
+                                    <option value="What is the name of the first school you attended?">What is the name of the first school you attended?</option>
+                                    <option value="What is your favorite holiday destination?">What is your favorite holiday destination?</option>
+                                </select>
+                            </div>
+                            <div class="form-group col">
+                                <label for="cm_security_ans2"><i class="fas fa-key"></i> Security Answer 2:</label>
+                                <input type="text" id="cm_security_ans2" name="cm_security_ans2" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="cm_suggestion"><i class="fas fa-user"></i> Suggestion :</label>
+                                <input type="text" id="cm_suggestion" name="cm_suggestion" class="form-control" required>
+                            </div>
+                            <div class="form-group col">
+                                <label for="cm_photo"><i class="fas fa-image"></i> Upload Profile Photo:</label>
+                                <input type="file" id="cm_photo" name="cm_photo" accept="image/jpeg" required>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        const subCommunityData = {
+            "Student": ["High School Student", "College Student", "Graduate Student"],
+            "Professional": ["Engineer", "Doctor", "Teacher"],
+            "Entrepreneur": ["Tech Startup", "Small Business Owner", "Social Entrepreneur"]
+        };
+
+        // JSON data for states, cities, talukas, and pincodes
+        const data = {
+            "Maharashtra": {
+                "Mumbai": {
+                    "Mumbai City": ["400001", "400002", "400003"],
+                    "Mumbai Suburban": ["400004", "400005", "400006"]
+                },
+                "Pune": {
+                    "Pune City": ["411001", "411002", "411003"],
+                    "Pimpri-Chinchwad": ["411004", "411005", "411006"]
+                }
+            },
+            "Gujarat": {
+                "Ahmedabad": {
+                    "Ahmedabad City": ["380001", "380002", "380003"],
+                    "Gandhinagar": ["380004", "380005", "380006"]
+                },
+                "Surat": {
+                    "Surat City": ["395001", "395002", "395003"],
+                    "Navsari": ["395004", "395005", "395006"]
+                }
+            }
+        };
+
+        function togglePassword() {
+            const passwordInput = document.getElementById("cm_pass");
+            const icon = document.querySelector("#cm_pass + .input-group-append .fa");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+
+        function toggleConfirmPassword() {
+            const confirmPasswordInput = document.getElementById("confirmPassword");
+            const icon = document.querySelector("#confirmPassword + .input-group-append .fa");
+            if (confirmPasswordInput.type === "password") {
+                confirmPasswordInput.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                confirmPasswordInput.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+
+        // Populate sub-community dropdown based on selected community
+        function populateSubCommunities() {
+            const selectedCommunity = document.getElementById("cm_community").value;
+            const subCommunityDropdown = document.getElementById("cm_sub_community");
+            subCommunityDropdown.innerHTML = "<option value=''>Select sub-community</option>";
+            if (selectedCommunity in subCommunityData) {
+                subCommunityData[selectedCommunity].forEach(subCommunity => {
+                    const option = document.createElement("option");
+                    option.value = subCommunity;
+                    option.textContent = subCommunity;
+                    subCommunityDropdown.appendChild(option);
+                });
+            }
+        }
+        document.getElementById("cm_community").addEventListener("change", populateSubCommunities);
+
+        // Populate states dropdown
+        const statesDropdown = document.getElementById("cm_state");
+        for (const state in data) {
+            const option = document.createElement("option");
+            option.value = state;
+            option.textContent = state;
+            statesDropdown.appendChild(option);
+        }
+
+        // Update cities dropdown based on selected state
+        function updateCities() {
+            const selectedState = statesDropdown.value;
+            const citiesDropdown = document.getElementById("cm_dist");
+            citiesDropdown.innerHTML = "<option value=''>Select a district</option>";
+            if (selectedState in data) {
+                for (const city in data[selectedState]) {
+                    const option = document.createElement("option");
+                    option.value = city;
+                    option.textContent = city;
+                    citiesDropdown.appendChild(option);
+                }
+            }
+        }
+        statesDropdown.addEventListener("change", updateCities);
+
+        // Update talukas dropdown based on selected city
+        function updateTalukas() {
+            const selectedState = statesDropdown.value;
+            const selectedCity = document.getElementById("cm_dist").value;
+            const talukasDropdown = document.getElementById("cm_tal");
+            talukasDropdown.innerHTML = "<option value=''>Select a taluka</option>";
+            if (selectedState in data && selectedCity in data[selectedState]) {
+                for (const taluka in data[selectedState][selectedCity]) {
+                    const option = document.createElement("option");
+                    option.value = taluka;
+                    option.textContent = taluka;
+                    talukasDropdown.appendChild(option);
+                }
+            }
+        }
+        document.getElementById("cm_dist").addEventListener("change", updateTalukas);
+
+        // Update pincodes dropdown based on selected taluka
+        function updatePincodes() {
+            const selectedState = statesDropdown.value;
+            const selectedCity = document.getElementById("cm_dist").value;
+            const selectedTaluka = document.getElementById("cm_tal").value;
+            const pincodesDropdown = document.getElementById("cm_pincode");
+            pincodesDropdown.innerHTML = "<option value=''>Select a pincode</option>";
+            if (selectedState in data && selectedCity in data[selectedState] && selectedTaluka in data[selectedState][selectedCity]) {
+                const pincodes = data[selectedState][selectedCity][selectedTaluka];
+                pincodes.forEach(pincode => {
+                    const option = document.createElement("option");
+                    option.value = pincode;
+                    option.textContent = pincode;
+                    pincodesDropdown.appendChild(option);
+                });
+            }
+        }
+        document.getElementById("cm_tal").addEventListener("change", updatePincodes);
+
+        // Form validation
+        function validateForm() {
+            var name = document.getElementById("cm_name").value;
+            var email = document.getElementById("cm_email").value;
+            var contact = document.getElementById("cm_contact").value;
+            var password = document.getElementById("cm_pass").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var profession = document.getElementById("profession").value;
+            var gender = document.getElementById("gender").value;
+            var subCommunity = document.getElementById("cm_sub_community").value;
+            var state = document.getElementById("cm_state").value;
+            var district = document.getElementById("cm_dist").value;
+            var taluka = document.getElementById("cm_tal").value;
+            var pincode = document.getElementById("cm_pincode").value;
+            if (name == "" || email == "" || contact == "" || password == "" || confirmPassword == "" || profession == "" || gender == "" || subCommunity == "" || state == "" || district == "" || taluka == "" || pincode == "") {
+                alert("All fields are required!");
+                return false;
+            } else if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
