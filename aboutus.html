@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Community Event Network</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Community Event Network - Connecting Communities">
+    <meta name="author" content="Community Event Network">
+    <title>Community Event Network</title>
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom styles -->
     <style>
- /* Navigation */
- /* Navigation */
- .navbar {
+        /* Navigation */
+        .navbar {
             background-color: #343a40;
             padding: 15px 0;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -20,36 +34,41 @@
             color: #fff;
             font-weight: bold;
             font-family: 'Crimson Text', serif;
-        }
-        .logo {
-            max-width: 5%; /* Allow logo to resize proportionally */
-            height: auto;
-            margin-right: 8px; /* Adjust margin as needed */
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+            text-decoration: none; /* Remove default underline */
+            transition: color 0.3s; /* Smooth transition */
         }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+        .navbar-nav .nav-link:hover {
+            color: #007bff; /* Change color on hover */
         }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
+        .navbar-nav .nav-link.active {
+            color: #007bff; /* Change color for active page */
+        }
+ /* About Section */
+ .about-section {
+            background: url('https://picsum.photos/1920/1080') center/cover no-repeat fixed;
+            padding: 100px 0;
+            color: #0e0e0e;
+            font-family: 'Crimson Text', serif;
         }
 
-        /* Reset CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .about-section .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
         }
 
+        .about-section .section-content {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .about-section img {
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
+
+        /* Box Container */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-image: url('https://picsum.photos/1920/1080');
@@ -164,11 +183,11 @@
             }
         }
 
-        /* Copyright Section */
-        .copyright-section {
+         /* Copyright Section */
+         .copyright-section {
             background-color: #343a40;
             padding: 20px 0;
-            color: #fcf3f3;
+            color: #fff;
             font-size: 14px;
             text-align: center;
         }
@@ -189,49 +208,45 @@
             color: #007bff;
         }
 
-        .status-enabled {
-            color: #28a745;
-        }
+        
 
-        .status-disabled {
-            color: #dc3545;
-        }
     </style>
 </head>
+
 <body>
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <img src="https://picsum.photos/200" alt="Community Event Network Logo" class="logo">
-                <a class="navbar-brand" href="#">Community Event Network</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" id="Home" href="home1.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="About Us" href="aboutus.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="Events" href="event.php">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="gallery" href="gallery.html">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="Contact Us" href="contactus.html">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="Login" href="login.html">Login</a>
-                        </li>
-                    </ul>
-                </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Community Event Network</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" id="Home" href="home1.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="About Us" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Events" href="event.php">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Listing" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="Contact Us" href="contactus.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Login" href="signin.php">Login</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
     <main>
         <section id="mission">
@@ -298,7 +313,7 @@
         
         
    <!-- New Engaging Section -->
-<section id="new-section" style="background-color: #f9f9f9; padding: 50px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); text-align: center;">
+<!-- <section id="new-section" style="background-color: #f9f9f9; padding: 50px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); text-align: center;">
     <h2 style="color: #333; font-size: 2.5rem; margin-bottom: 20px;">Explore What's New</h2>
     <div class="card-container" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
         <div class="card" style="width: 300px; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
@@ -313,6 +328,26 @@
         </div>
     </div>
     <a href="#" style="display: inline-block; background-color: #ff6f61; color: #fff; font-weight: bold; text-decoration: none; padding: 12px 30px; border-radius: 30px; margin-top: 30px; transition: background-color 0.3s;">Start Exploring</a>
+</section> -->
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-content">Community Event Network is a platform for people to connect, share ideas, and work together to create positive change in their communities. <br>
+                    Our network consists of community leaders, organizations, and individuals who are passionate about making a difference. We provide resources, support, and opportunities for collaboration to help our members achieve their goals and create impact.
+                    Together, we can make a difference and create stronger, more vibrant communities.</p>
+                <p class="section-content">Since launching our community event network, we have seen incredible growth and engagement.
+                    Our network has also facilitated partnerships between community organizations, businesses, and government agencies, leading to new initiatives and programs that benefit our communities.</p>
+                <!-- Add community details here -->
+            </div>
+            <div class="col-lg-6">
+                <img src="https://picsum.photos/854/600?random=4" class="img-fluid rounded" alt="About Us Image">
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Get Involved Section -->
@@ -341,21 +376,21 @@
 </section>
 
 
-</section>
-<!-- Copyright Section -->
-<section class="copyright-section">
-    <div class="container">
-        <div class="social-icons">
-            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <!-- Copyright Section -->
+    <section class="copyright-section">
+        <div class="container" style="padding-left: 0px; padding-right: 0px;">
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 Community Event Network. All rights reserved.</p>
         </div>
-        <p>&copy; 2024 Community Event Network. All rights reserved.</p>
-    </div>
-</section>
+    </section>
+    
 
-    </main>
-
-</body>
-</html>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
