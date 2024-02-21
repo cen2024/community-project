@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Community Event Network - Connecting Communities">
     <meta name="author" content="Community Event Network">
-    <title>Community Event Network</title>
+    <title>About Us</title>
     <link rel="shortcut icon" href="favicon.ico">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,27 +24,55 @@
     <style>
         /* Navigation */
         .navbar {
-            background-color: #343a40;
-            padding: 15px 0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: black;
+        padding: 15px 0;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000; /* Ensure navbar appears above other content */
+        font-size: 20px;
+    }
 
-        .navbar-brand,
-        .navbar-nav .nav-link {
-            color: #fff;
-            font-weight: bold;
-            font-family: 'Crimson Text', serif;
-            text-decoration: none; /* Remove default underline */
-            transition: color 0.3s; /* Smooth transition */
-        }
+    .navbar-brand,
+    .navbar-nav .nav-link {
+        color: cadetblue;
+        font-weight: bold;
+        font-family: 'Crimson Text', serif;
+    }
 
-        .navbar-nav .nav-link:hover {
-            color: #007bff; /* Change color on hover */
-        }
+    .logo {
+        max-width: 5%;
+        height: auto;
+        margin-right: 8px;
+    }
 
-        .navbar-nav .nav-link.active {
-            color: #007bff; /* Change color for active page */
-        }
+    .navbar-toggler-icon {
+        background-color: cadetblue;
+    }
+
+    .navbar-toggler {
+        border-color: cadetblue;
+    }
+
+    .navbar-toggler:focus,
+    .navbar-toggler:active {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .navbar-nav .nav-link {
+        transition: color 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #fff;
+    }
+
+    /* Adjust body padding to prevent content from being hidden behind fixed navbar */
+    body {
+        padding-top: 70px; /* Adjust according to your navbar height */
+    }
  /* About Section */
  .about-section {
             background: url('https://picsum.photos/1920/1080') center/cover no-repeat fixed;
@@ -183,34 +211,36 @@
             }
         }
 
-         /* Copyright Section */
-         .copyright-section {
-            background-color: #343a40;
-            padding: 20px 0;
-            color: #fff;
-            font-size: 14px;
-            text-align: center;
-        }
+        /* Copyright Section */
+    .copyright-section {
+        padding: 20px 0;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+       
+    }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+       
+    }
 
-        .social-icons a {
-            color: #fff;
-            font-size: 18px;
-            margin: 0 10px;
-        }
+    .social-icons a {
+        color: #fff;
+        font-size: 18px;
+        margin: 0 10px;
+        text-decoration: none;
+    }
 
-        .social-icons a:hover {
-            color: #007bff;
-        }
+    .social-icons a:hover {
+        color: #007bff;
+    }
 
         
 
-    </style>
+</style>
 </head>
 
 <body>
@@ -376,21 +406,30 @@
 </section>
 
 
-    <!-- Copyright Section -->
-    <section class="copyright-section">
-        <div class="container" style="padding-left: 0px; padding-right: 0px;">
-            <div class="social-icons">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>&copy; 2024 Community Event Network. All rights reserved.</p>
+   <!-- Copyright Section -->
+   <div class="copyright-section" style="background-color: black;">
+    <div class="container">
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
-    </section>
+        <p style="color: cadetblue;">&copy; 2024 Community Event Network. All rights reserved.</p>
+    </div>
+</div>
     
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".nav-link").click(function () {
+                $(".nav-item").removeClass("active");
+                $(this).closest(".nav-item").addClass("active");
+            });
+        });
+    </script>

@@ -3,47 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Community Event Network Gallery</title>
+<title>Gallery</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-FcC5FztpnCfOwPddP6aEiJvxGABG49S3G6qU4vQbsg9G3VIEyd5bJKRuIaM7fu3zjt74bPmB2R9KAMy9zS8dKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-  }
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  .navbar {
-    background-color: #343a40;
-    padding: -8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
+ .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: black;
+        padding: 15px 0;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000; /* Ensure navbar appears above other content */
+        font-size: 20px;
+    }
 
-  .navbar-brand,
-  .navbar-nav .nav-link {
-    color: #fff;
-    font-weight: bold;
-    font-family: 'Crimson Text', serif;
-  }
+    .navbar-brand,
+    .navbar-nav .nav-link {
+        color: cadetblue;
+        font-weight: bold;
+        font-family: 'Crimson Text', serif;
+    }
 
-  .logo {
-    max-width: 5%; /* Allow logo to resize proportionally */
-    height: auto;
-    margin-right: 8px; /* Adjust margin as needed */
-  }
+    .logo {
+        max-width: 5%;
+        height: auto;
+        margin-right: 8px;
+    }
 
-  .navbar-nav .nav-link.active {
-    border-bottom: 2px solid #fff; /* Add underline effect */
-  }
+    .navbar-toggler-icon {
+        background-color: cadetblue;
+    }
 
-  h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-  }
+    .navbar-toggler {
+        border-color: cadetblue;
+    }
+
+    .navbar-toggler:focus,
+    .navbar-toggler:active {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .navbar-nav .nav-link {
+        transition: color 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #fff;
+    }
+
+    /* Adjust body padding to prevent content from being hidden behind fixed navbar */
+    body {
+        padding-top: 70px; /* Adjust according to your navbar height */
+        background-color: #0e0e0e;
+        color: white;
+    }
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -98,64 +113,66 @@
     height: auto;
   }
  
-    /* Footer */
-    .copyright-section {
-            background-color: #343a40;
-            color: #fff;
-            padding: 0px 0;
-            text-align: center;
-        }
+   /* Copyright Section */
+   .copyright-section {
+        padding: 20px 0;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+    }
 
-        .social-icons {
-            margin-bottom: 5px;
-        }
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
 
-        .social-icons a {
-            color: #fff;
-            font-size: 10px;
-            margin: 0 8px;
-        }
+    .social-icons a {
+        color: #fff;
+        font-size: 18px;
+        margin: 0 10px;
+        text-decoration: none;
+    }
 
-        .social-icons a:hover {
-            color: #007bff;
-        }
+    .social-icons a:hover {
+        color: #007bff;
+    }
 
 </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-        <img src="https://picsum.photos/200" alt="Community Event Network Logo" class="logo">
-        <a class="navbar-brand" href="#">Community Event Network</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" id="Home" href="home1.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="About Us" href="aboutus.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="Events" href="event.php">Events</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" id="Listing" href="gallery.html">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="Contact Us" href="contactus.html">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="Login" href="login.html">Login</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+ <!-- Navigation -->
+ <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+      <a class="navbar-brand" href="#">Community Event Network</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" id="Home" href="home1.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="About Us" href="aboutus.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="Events" href="event.php">Events</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="Listing" href="gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" id="Contact Us" href="contactus.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="Login" href="signin.php">Login</a>
+              </li>
+          </ul>
+      </div>
+  </div>
 </nav>
-
 
 <div class="container">
   <h1>Our Gallery</h1>
@@ -342,8 +359,8 @@
   </div>
 </div>
 
-<!-- Copyright Section -->
-<section class="copyright-section">
+  <!-- Copyright Section -->
+<div class="copyright-section" style="background-color: black;">
   <div class="container">
       <div class="social-icons">
           <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -351,10 +368,9 @@
           <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
-      <p>&copy; 2024 Community Event Network. All rights reserved.</p>
+      <p style="color: cadetblue;">&copy; 2024 Community Event Network. All rights reserved.</p>
   </div>
-</section>
-
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

@@ -20,186 +20,264 @@
 
     <!-- Custom styles -->
     <style>
-        /* Navigation */
-        .navbar {
-            background-color: #343a40;
-            padding: 15px 0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
+       .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: black;
+        padding: 15px 0;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000; /* Ensure navbar appears above other content */
+        font-size: 20px;
+    }
 
-        .navbar-brand,
-        .navbar-nav .nav-link {
-            color: #fff;
-            font-weight: bold;
-            font-family: 'Crimson Text', serif;
-        }
-        .logo {
-            max-width: 5%; /* Allow logo to resize proportionally */
-            height: auto;
-            margin-right: 8px; /* Adjust margin as needed */
-        }
-        /* Carousel Section */
-        #community-carousel .carousel-item {
-            height: 500px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
+    .navbar-brand,
+    .navbar-nav .nav-link {
+        color: cadetblue;
+        font-weight: bold;
+        font-family: 'Crimson Text', serif;
+    }
 
-        #community-carousel .carousel-item img {
-            height: 500px;
-            object-fit: cover;
-        }
+    .logo {
+        max-width: 5%;
+        height: auto;
+        margin-right: 8px;
+    }
 
-        #community-carousel .carousel-caption {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #fff;
-            text-align: center;
-        }
+    .navbar-toggler-icon {
+        background-color: cadetblue;
+    }
 
-        #community-carousel .carousel-caption h3 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+    .navbar-toggler {
+        border-color: cadetblue;
+    }
 
-        #community-carousel .carousel-caption p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
+    .navbar-toggler:focus,
+    .navbar-toggler:active {
+        outline: none;
+        box-shadow: none;
+    }
 
-        #community-carousel .carousel-caption a {
-            font-size: 1.2rem;
-            text-decoration: none;
-            color: #fff;
-            background-color: #007bff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: background-color 0.1s ease;
-        }
+    .navbar-nav .nav-link {
+        transition: color 0.3s ease-in-out;
+    }
 
-        #community-carousel .carousel-caption a:hover {
-            background-color: #0056b3;
-        }
+    .navbar-nav .nav-link:hover {
+        color: #fff;
+    }
 
-        /* About Section */
-        .about-section {
-            background: url('https://picsum.photos/1920/1080') center/cover no-repeat fixed;
-            padding: 100px 0;
-            color: #0e0e0e;
-            font-family: 'Crimson Text', serif;
-        }
+    /* Adjust body padding to prevent content from being hidden behind fixed navbar */
+    body {
+        padding-top: 70px; /* Adjust according to your navbar height */
+        background-color: #0e0e0e;
+        color: white;
+    }
+    /* Carousel Section */
+    #community-carousel .carousel-item {
+        height: 500px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
 
-        .about-section .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
+    #community-carousel .carousel-item img {
+        height: 500px;
+        object-fit: cover;
+    }
 
-        .about-section .section-content {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
+    #community-carousel .carousel-caption {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        text-align: center;
+    }
 
-        .about-section img {
-            border: 2px solid #fff;
-            border-radius: 10px;
-        }
+    #community-carousel .carousel-caption h3 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
 
-        /* Events Section */
-        .events-section {
-            background-color: #f8f9fa;
-            padding: 100px 0;
-            font-family: 'Crimson Text', serif;
-        }
+    #community-carousel .carousel-caption p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
 
-        .events-section .event-item {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+    #community-carousel .carousel-caption a {
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
+        padding: 10px 20px;
+        border-radius: 25px;
+        transition: background-color 0.1s ease;
+    }
 
-        .events-section .event-item img {
-            border-radius: 10px;
-            margin-bottom: 20px;
-            max-width: 100%;
-        }
+    #community-carousel .carousel-caption a:hover {
+        background-color: #0056b3;
+    }
 
-        .events-section .event-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+   /* About Section */
+.about-section {
+    background: url('https://picsum.photos/1920/1080') center/cover no-repeat fixed;
+    padding: 100px 0;
+    color: #0e0e0e;
+    font-family: 'Crimson Text', serif;
+    background-color: #f8f9fa; /* Change background color */
+    margin-top: 30px;
+}
 
-        .events-section .event-details {
-            font-size: 1rem;
-            color: #6c757d;
-            margin-bottom: 10px;
-        }
+.about-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #343a40; /* Change text color */
+    text-align: center;
+  
+}
 
-        /* Contact Section */
-        .contact-section {
-            background: url('https://picsum.photos/1354/1080') center/cover no-repeat fixed;
-            padding: 100px 0;
-            color: #151414;
-            font-family: 'Crimson Text', serif;
-        }
+.about-section .section-content {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #6c757d; /* Change text color */
+    text-align: center;
+}
 
-        .contact-section .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
+.about-section img {
+    border: 2px solid #343a40; /* Change border color */
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+}
 
-        .contact-section .contact-info p {
-            margin-bottom: 10px;
-        }
+    /* Custom CSS for event items */
+    .event-item {
+        width: 300px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 15px;
+        transition: transform 0.3s ease-in-out;
+        background-color: #fff;
+        margin-bottom: 30px;
+    }
 
-        .contact-section .contact-box {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 7px;
-            padding: 2px;
-            margin-bottom: 12px;
-        }
+    .event-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
 
-        .contact-section .contact-box h3 {
-            color: #fff;
-            font-size: 1.5rem;
-        }
+    .event-title {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        color: #343a40;
+        font-family: 'Crimson Text', serif;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out;
+        text-align: center;
+    }
 
-        /* Copyright Section */
-        .copyright-section {
-            background-color: #343a40;
-            padding: 20px 0;
-            color: #fff;
-            font-size: 14px;
-            text-align: center;
-        }
+    .event-details {
+        font-size: 0.9rem;
+        color: #666;
+        transition: color 0.3s ease-in-out;
+        text-align: center;
+    }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
+    .event-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        .social-icons a {
-            color: #fff;
-            font-size: 18px;
-            margin: 0 10px;
-        }
+    .event-item:hover .event-title,
+    .event-item:hover .event-details {
+        color: #0056b3;
+    }
 
-        .social-icons a:hover {
-            color: #007bff;
-        }
+    .status-enabled {
+        color: #28a745;
+    }
 
-        .status-enabled {
-            color: #28a745;
-        }
+    .status-disabled {
+        color: #dc3545;
+    }
 
-        .status-disabled {
-            color: #dc3545;
-        }
+    /* Contact Section */
+    .contact-section {
+        background: url('https://picsum.photos/1354/1080') center/cover no-repeat fixed;
+        padding: 100px 0;
+        color: #151414;
+        font-family: 'Crimson Text', serif;
+        margin-top: 30px;
+    }
+
+    .contact-section .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .contact-section .contact-info p {
+        margin-bottom: 10px;
+    }
+
+    .contact-section .contact-box {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 7px;
+        padding: 10px;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+
+    .contact-section .contact-box h3 {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .contact-section .contact-box p {
+        color: #fff;
+        margin: 0;
+    }
+
+    /* Copyright Section */
+    .copyright-section {
+        padding: 20px 0;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .social-icons a {
+        color: #fff;
+        font-size: 18px;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    .social-icons a:hover {
+        color: #007bff;
+    }
+
+    .highlighted {
+        background-color: #ffc107;
+        color: #000;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+</style>
+
+
     </style>
 </head>
 
@@ -217,13 +295,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" id="Home" href="home1.html">Home</a>
+                        <a class="nav-link" id="Home" href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="About Us" href="aboutus.html">About Us</a>
+                        <a class="nav-link" id="About Us" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="Events" href="event.php">Events</a>
+                        <a class="nav-link" id="Events" href="event.html">Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="gallery" href="gallery.html">Gallery</a>
@@ -232,7 +310,7 @@
                         <a class="nav-link" id="Contact Us" href="contactus.html">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="Login" href="login.html">Login</a>
+                        <a class="nav-link" id="Login" href="signin.php">Login</a>
                     </li>
                 </ul>
             </div>
@@ -298,101 +376,155 @@
     </section>
 
     <!-- Events Section -->
-    <section id="events" class="events-section">
-        <div class="container">
-            <h2 class="section-title">Events</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="event-item">
-                        <img src="https://picsum.photos/800/600?random=5" alt="Event Image">
-                        <h3 class="event-title">Kickoff Carnival</h3>
-                        <p class="event-details"><i class="fas fa-map-marker-alt"></i> Balewadi High Street, Balewadi, Pune 411045</p>
-                        <p class="event-details"><i class="far fa-calendar-alt"></i> 20/02/2024</p>
-                        <p class="event-details"><i class="fas fa-check-circle status-enabled"></i> Status: Enabled</p>
-                        <p class="event-details">Community: Sports</p>
-                        <p class="event-details">Sub Community: Football</p>
-                        <p class="event-details">Description:  For fans and players passionate about the world's most popular sport.</p>
+   <!-- Events Section with Carousel -->
+<section id="events" class="events-section">
+    <div class="container "> 
+        <h2 class="section-title mb-4 text-center" style="background-color: black;">
+            <span class="highlighted">Events</span>
+        </h2>
+        <div id="events-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4 event-item">
+                            <img src="https://picsum.photos/800/600?random=5" alt="Event Image">
+                            <h3 class="event-title">Kickoff Carnival</h3>
+                            <p class="event-details"><i class="fas fa-map-marker-alt"></i> Balewadi High Street, Balewadi, Pune 411045</p>
+                            <p class="event-details"><i class="far fa-calendar-alt"></i> 20/02/2024</p>
+                            <p class="event-details"><i class="fas fa-check-circle status-enabled"></i> Status: Enabled</p>
+                            <p class="event-details">Community: Sports</p>
+                            <p class="event-details">Sub Community: Football</p>
+                            <p class="event-details">Description:  For fans and players passionate about the world's most popular sport.</p>
+                        </div>
+                        <!-- Add more event items here -->
+                        <div class="col-md-4 event-item">
+                            <img src="https://picsum.photos/800/600?random=6" alt="Event Image">
+                            <h3 class="event-title">Artistry Unleashed</h3>
+                            <p class="event-details"><i class="fas fa-map-marker-alt"></i> Darpan Art Gallery, SB Road, Pune 411016</p>
+                            <p class="event-details"><i class="far fa-calendar-alt"></i> 12/12/2023</p>
+                            <p class="event-details"><i class="fas fa-times-circle status-disabled"></i> Status: Disabled</p>
+                            <p class="event-details">Community: Arts</p>
+                            <p class="event-details">Sub Community: Drawing & Painting</p>
+                            <p class="event-details">Description: A community for artists to share techniques and showcase their visual creations.</p>
+                        </div>
+                        <div class="col-md-4 event-item">
+                            <img src="https://picsum.photos/800/600?random=7" alt="Event Image">
+                            <h3 class="event-title">Code Connect</h3>
+                            <p class="event-details"><i class="fas fa-map-marker-alt"></i> Hyatt Pune, Kalyani Nagar, Pune 411006</p>
+                            <p class="event-details"><i class="far fa-calendar-alt"></i> 25/02/2024</p>
+                            <p class="event-details"><i class="fas fa-check-circle status-enabled"></i> Status: Enabled</p>
+                            <p class="event-details">Community: Coding Community</p>
+                            <p class="event-details">Sub Community: Software Development</p>
+                            <p class="event-details">Description: Coders share knowledge and collaborate on tech solutions and projects.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="event-item">
-                        <img src="https://picsum.photos/800/600?random=6" alt="Event Image">
-                        <h3 class="event-title">Artistry Unleashed</h3>
-                        <p class="event-details"><i class="fas fa-map-marker-alt"></i> Darpan Art Gallery, SB Road, Pune 411016</p>
-                        <p class="event-details"><i class="far fa-calendar-alt"></i> 12/12/2023</p>
-                        <p class="event-details"><i class="fas fa-times-circle status-disabled"></i> Status: Disabled</p>
-                        <p class="event-details">Community: Arts</p>
-                        <p class="event-details">Sub Community: Drawing & Painting</p>
-                        <p class="event-details">Description: A community for artists to share techniques and showcase their visual creations.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="event-item">
-                        <img src="https://picsum.photos/800/600?random=7" alt="Event Image">
-                        <h3 class="event-title"> Code Connect</h3>
-                        <p class="event-details"><i class="fas fa-map-marker-alt"></i> Hyatt Pune, Kalyani Nagar, Pune 411006</p>
-                        <p class="event-details"><i class="far fa-calendar-alt"></i> 25/02/2024</p>
-                        <p class="event-details"><i class="fas fa-check-circle status-enabled"></i> Status: Enabled</p>
-                        <p class="event-details">Community: Coding Community</p>
-                        <p class="event-details">Sub Community: Software Development</p>
-                        <p class="event-details">Description: Coders share knowledge and collaborate on tech solutions and projects.</p>
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- Add 5 more event items here -->
+                        <div class="col-md-4 event-item">
+                            <img src="https://picsum.photos/800/600?random=8" alt="Event Image">
+                            <h3 class="event-title">Music Festival</h3>
+                            <p class="event-details"><i class="fas fa-map-marker-alt"></i> City Park, Downtown, Pune 411001</p>
+                            <p class="event-details"><i class="far fa-calendar-alt"></i> 10/03/2024</p>
+                            <p class="event-details"><i class="fas fa-check-circle status-enabled"></i> Status: Enabled</p>
+                            <p class="event-details">Community: Music</p>
+                            <p class="event-details">Sub Community: Live Performances</p>
+                            <p class="event-details">Description: A celebration of music featuring live performances by local and international artists.</p>
+                        </div>
+                        <div class="col-md-4 event-item">
+                            <img src="https://picsum.photos/800/600?random=9" alt="Event Image">
+                            <h3 class="event-title">Tech Conference</h3>
+                            <p class="event-details"><i class="fas fa-map-marker-alt"></i> Convention Center, Pune 411002</p>
+                            <p class="event-details"><i class="far fa-calendar-alt"></i> 15/03/2024</p>
+                            <p class="event-details"><i class="fas fa-check-circle status-enabled"></i> Status: Enabled</p>
+                            <p class="event-details">Community: Technology</p>
+                            <p class="event-details">Sub Community: IT Professionals</p>
+                            <p class="event-details">Description: A conference bringing together IT professionals to discuss the latest trends and innovations in technology.</p>
+                        </div>
+                        <div class="col-md-4 event-item">
+                            <img src="https://picsum.photos/800/600?random=10" alt="Event Image">
+                            <h3 class="event-title">Food Festival</h3>
+                            <p class="event-details"><i class="fas fa-map-marker-alt"></i> Food Street, Koregaon Park, Pune 411003</p>
+                            <p class="event-details"><i class="far fa-calendar-alt"></i> 20/03/2024</p>
+                            <p class="event-details"><i class="fas fa-check-circle status-enabled"></i> Status: Enabled</p>
+                            <p class="event-details">Community: Food</p>
+                            <p class="event-details">Sub Community: Culinary Arts</p>
+                            <p class="event-details">Description: An extravaganza of flavors featuring cuisines from around the world and culinary demonstrations.</p>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
+            <a class="carousel-control-prev" href="#events-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#events-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-                    </form>
-                </div>
-                <div class="col-lg-6">
-                    <div class="contact-info">
-                        <div class="contact-box">
-                            <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
-                            <p>123 Main Street, City, Country</p>
-                        </div>
-                        <div class="contact-box">
-                            <h3><i class="fas fa-phone"></i> Phone</h3>
-                            <p>+91 1234567890</p>
-                        </div>
-                        <div class="contact-box">
-                            <h3><i class="fas fa-envelope"></i> Email</h3>
-                            <p>info@example.com</p>
-                        </div>
+    <!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                        <div class="invalid-feedback">Please enter a message.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+            </div>
+
+
+            <div class="col-lg-6">
+                <div class="contact-info">
+                    <div class="contact-box">
+                        <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                        <p>123 Main Street, City, Country</p>
+                    </div>
+                    <div class="contact-box">
+                        <h3><i class="fas fa-phone"></i> Phone</h3>
+                        <p>+91 1234567890</p>
+                    </div>
+                    <div class="contact-box">
+                        <h3><i class="fas fa-envelope"></i> Email</h3>
+                        <p>info@example.com</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Copyright Section -->
-    <section class="copyright-section">
-        <div class="container">
-            <div class="social-icons">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>&copy; 2024 Community Event Network. All rights reserved.</p>
+   <!-- Copyright Section -->
+<div class="copyright-section" style="background-color: black;">
+    <div class="container">
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
-    </section>
+        <p style="color: cadetblue;">&copy; 2024 Community Event Network. All rights reserved.</p>
+    </div>
+</div>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -403,7 +535,22 @@
         $('.carousel').carousel({
             interval: 5000 // Change interval here
         });
+
     </script>
+
+<script>
+    $(document).ready(function () {
+        $(".nav-link").click(function () {
+            $(".nav-item").removeClass("active");
+            $(this).closest(".nav-item").addClass("active");
+        });
+    });
+</script>
+
 </body>
 
 </html>
+
+
+
+

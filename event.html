@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Your custom CSS styles here */
+        /* Ensure your styles include proper spacing and alignment */
+
+        /* Navbar styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            padding: 15px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure navbar appears above other content */
+            font-size: 20px;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: cadetblue;
+            font-weight: bold;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .logo {
+            max-width: 5%;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        .navbar-toggler-icon {
+            background-color: cadetblue;
+        }
+
+        .navbar-toggler {
+            border-color: cadetblue;
+        }
+
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .navbar-nav .nav-link {
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #fff;
+        }
+
+        /* Adjust body padding to prevent content from being hidden behind fixed navbar */
+        body {
+            padding-top: 70px; /* Adjust according to your navbar height */
+            background-color: #0e0e0e;
+            color: white;
+        }
+
+        /* Event cards styles */
+        .event-item {
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+
+    .event-image {
+    width :75%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+    max-height: 150px; /* Adjust maximum height of the image */
+}
+
+        .event-info {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .event-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .event-details {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+
+    
+@media (max-width: 768px) {
+    .event-item {
+        width: calc(50% - 20px); /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .event-item {
+        width: 100%; /* Full width for extra small screens */
+        margin-right: 0; /* No margin between cards */
+    }
+}
+
+        /* Modal styles */
+        .modal-header,
+        .modal-footer {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .modal-body {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <img src="https://picsum.photos/200" alt="Community Event Network Logo" class="logo">
+            <a class="navbar-brand" href="#">Community Event Network</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="Home" href="home1.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="About Us" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Events" href="event.php">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="gallery" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Contact Us" href="contactus.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Login" href="signin.php">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Event cards for Events section -->
+    <div class="row">
+        <div class="col-md-4">
+        <div class="card event-item">
+            <img src="https://picsum.photos/800/600?random=5" alt="Event Image">
+            <div class="card-body event-info">
+                <h5 class="card-title event-title">Kickoff Carnival</h5>
+                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>Balewadi High Street, Balewadi, Pune 411045</p>
+                <p class="card-text event-details"><i class="far fa-calendar-alt"></i> 20/02/2024</p>
+                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Kickoff Carnival" data-event-date="20/02/2024" data-event-venue="Balewadi High Street, Balewadi, Pune 411045" data-event-status="Enabled" data-event-community="Sports" data-event-subcommunity="Football" data-event-description="For fans and players passionate about the world's most popular sport.">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Second Event -->
+  
+    <div class="col-md-4">
+        <div class="card event-item">
+            <img src="https://picsum.photos/800/600?random=6" alt="Event Image">
+            <div class="card-body event-info">
+                <h5 class="card-title event-title">Artistry Unleashed</h5>
+                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>Darpan Art Gallery, SB Road, Pune 411016</p>
+                <p class="card-text event-details"><i class="far fa-calendar-alt"></i> 12/12/2023</p>
+                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Artistry Unleashed" data-event-date="12/12/2023" data-event-venue="Darpan Art Gallery, SB Road, Pune 411016" data-event-status="Disabled" data-event-community="Arts" data-event-subcommunity="Drawing & Painting" data-event-description="A community for artists to share techniques and showcase their visual creations.">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Third Event -->
+
+    <div class="col-md-4">
+        <div class="card event-item">
+            <img src="https://picsum.photos/800/600?random=7" alt="Event Image">
+            <div class="card-body event-info">
+                <h5 class="card-title event-title">Code Connect</h5>
+                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>Hyatt Pune, Kalyani Nagar, Pune 411006</p>
+                <p class="card-text event-details"><i class="far fa-calendar-alt"></i> 25/02/2024</p>
+                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Code Connect" data-event-date="25/02/2024" data-event-venue="Hyatt Pune, Kalyani Nagar, Pune 411006" data-event-status="Enabled" data-event-community="Coding Community" data-event-subcommunity="Software Development" data-event-description="Coders share knowledge and collaborate on tech solutions and projects.">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Fourth Event -->
+
+    <div class="col-md-4">
+        <div class="card event-item">
+            <img src="https://picsum.photos/800/600?random=8" alt="Event Image">
+            <div class="card-body event-info">
+                <h5 class="card-title event-title">Music Festival</h5>
+                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>City Park, Downtown, Pune 411001</p>
+                <p class="card-text event-details"><i class="far fa-calendar-alt"></i> 10/03/2024</p>
+                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Music Festival" data-event-date="10/03/2024" data-event-venue="City Park, Downtown, Pune 411001" data-event-status="Enabled" data-event-community="Music" data-event-subcommunity="Live Performances" data-event-description="A celebration of music featuring live performances by local and international artists.">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Fifth Event -->
+    
+    <div class="col-md-4">
+        <div class="card event-item">
+            <img src="https://picsum.photos/800/600?random=9" alt="Event Image">
+            <div class="card-body event-info">
+                <h5 class="card-title event-title">Community Picnic</h5>
+                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>Central Park, Koregaon Park, Pune 411001</p>
+                <p class="card-text event-details"><i class="far fa-calendar-alt"></i> 05/04/2024</p>
+                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Community Picnic" data-event-date="05/01/2024" data-event-venue="Central Park, Koregaon Park, Pune 411001" data-event-status="Enabled" data-event-community="Community" data-event-subcommunity="Outdoor Activities" data-event-description="A fun-filled day of outdoor games, food, and community bonding.">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card event-item">
+            <!-- Event Card Content -->
+            <img src="https://picsum.photos/800/600?random=10" alt="Event Image">
+            <div class="card-body event-info">
+                <h5 class="card-title event-title">Food Festival</h5>
+                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>Food Street, Koregaon Park, Pune 411003</p>
+                <p class="card-text event-details"><i class="far fa-calendar-alt"></i> 05/01/2024</p>
+                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Food Festival" data-event-date="12/01/2024" data-event-venue="Food Street, Koregaon Park, Pune 411003" data-event-status="Disabled" data-event-community="Food Festival" data-event-subcommunity="Outdoor Activities" data-event-description="An extravaganza of flavors featuring cuisines from around the world and culinary demonstrations..">View Details</a>
+            </div>
+        </div>
+    </div>
+  
+
+    <!-- Modal -->
+    <div class="modal fade" id="eventDetailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-event-title">Event Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-event-date">Date: </p>
+                    <p id="modal-event-venue">Venue: </p>
+                    <p id="modal-event-status">Status: </p>
+                    <p id="modal-event-community">Community: </p>
+                    <p id="modal-event-subcommunity">Sub Community: </p>
+                    <p id="modal-event-description">Description: </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript code to dynamically populate modal with event details
+        $(document).ready(function () {
+            $('.view-details-btn').click(function () {
+                var eventTitle = $(this).data('event-title');
+                var eventDate = $(this).data('event-date');
+                var eventVenue = $(this).data('event-venue');
+                var eventStatus = $(this).data('event-status');
+                var eventCommunity = $(this).data('event-community');
+                var eventSubCommunity = $(this).data('event-subcommunity');
+                var eventDescription = $(this).data('event-description');
+
+                $('#modal-event-title').text(eventTitle);
+                $('#modal-event-date').text('Date: ' + eventDate);
+                $('#modal-event-venue').text('Venue: ' + eventVenue);
+                $('#modal-event-status').text('Status: ' + eventStatus);
+                $('#modal-event-community').text('Community: ' + eventCommunity);
+                $('#modal-event-subcommunity').text('Sub Community: ' + eventSubCommunity);
+                $('#modal-event-description').text('Description: ' + eventDescription);
+            });
+        });
+    </script>
+</body>
+</html>
