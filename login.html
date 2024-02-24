@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Glassmorphism login Form Tutorial in HTML CSS</title>
+    <title>Login Form</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
@@ -19,23 +19,71 @@
             background-color: #f8f9fa;
             background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
             font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* This ensures the content fills at least the entire viewport height */
+        }
+
+        /* Navigation bar styles */
+        nav {
+            background-color: #000;
+            padding: 10px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Crimson Text', serif;
+            font-size: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 30px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s ease; /* Added transition effect */
+        }
+
+        .menu li a:hover {
+            color: cadetblue; /* Changed color on hover */
+        }
+
+        .menu li a.active {
+            color: cadetblue; /* Changed color for active link */
         }
 
         form {
             width: 500px;
             background-color: rgba(255, 255, 255, 0.8);
-            position: absolute;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%;
+            position: relative;
+            margin: 50px auto; /* Adjusted margin */
             border-radius: 20px;
             border: 2px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Increased box shadow */
             padding: 50px 35px;
         }
 
@@ -85,16 +133,17 @@
         }
 
         button {
-            margin-top: 50px;
-            width: 100%;
+            margin: 40px auto 0; /* Centering the button */
+            width: 150px; /* Adjusting button width */
             background-color: #007bff;
             color: #fff;
-            padding: 15px 0;
-            font-size: 18px;
+            padding: 15px 0; /* Resized submit button */
+            font-size: 20px; /* Resized submit button text */
             font-weight: 600;
             border-radius: 20px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            display: block;
         }
 
         button:hover {
@@ -121,22 +170,73 @@
 
         .back-button {
             position: absolute;
-            top: 20px;
+            top: 70px; /* Adjusted position */
             left: 20px;
             font-size: 24px;
             color: #007bff;
             cursor: pointer;
             transition: color 0.3s ease;
+            text-decoration: none;
         }
 
         .back-button:hover {
-            color: #0056b3;
+            color: #d3d8de;
+        }
+
+        .back-button i {
+            margin-right: 5px;
+            color: #141414;
+        }
+
+        /* Footer Section */
+        .footer {
+            font-family: 'Crimson Text', serif;
+            margin-top: auto; /* Pushes the footer to the bottom */
+            background-color: black;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-top: 50px; /* Added spacing */
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
         }
     </style>
 </head>
 <body>
-    
-    <a href="#" onclick="goBack()" class="back-button"><i class="fas fa-chevron-left"></i> Back</a>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" class="logo">
+            <img src="https://via.placeholder.com/50" alt="Logo"> <!-- Placeholder image, replace with your actual logo URL -->
+            Community Event Network
+        </a>
+        <ul class="menu">
+            <li><a href="home1.html">Home</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="event.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="login.html" class="login">Login</a></li> <!-- Added class "login" for login link -->
+        </ul>
+    </nav>
+
+    <!-- Back button -->
+    <a href="#" onclick="goBack()" class="back-button"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
 
     <form onsubmit="return validateForm()">
         <h3>Login Here</h3>
@@ -158,7 +258,38 @@
         </div>
     </form>
 
+    <!-- Footer Section -->
+    <div class="footer">
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Community Event Network. All rights reserved.</p>
+    </div>
+
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var menuItems = document.querySelectorAll('.menu li a');
+            var currentPage = window.location.href.split('/').pop(); // Get the current page URL
+
+            menuItems.forEach(function(item) {
+                if (item.getAttribute('href') === currentPage) { // Check if link matches current page URL
+                    item.classList.add('active'); // Add active class to the matched link
+                }
+            });
+
+            var loginLink = document.querySelector('.login');
+            loginLink.addEventListener('click', function() {
+                var currentActive = document.querySelector('.menu li a.active');
+                if (currentActive) {
+                    currentActive.classList.remove('active');
+                }
+                loginLink.classList.add('active');
+            });
+        });
+
         function goBack() {
             window.history.back();
         }

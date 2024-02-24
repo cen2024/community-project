@@ -22,53 +22,76 @@
 
     <!-- Custom styles -->
     <style>
-        /* Navigation */
-        .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: black;
-        padding: 15px 0;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000; /* Ensure navbar appears above other content */
-        font-size: 20px;
-    }
+       *:before,
+        *:after {
+            margin-top: auto;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /* Navigation bar styles */
+        nav {
+            z-index: 1000;
+            background-color: #000;
+            padding: 10px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Crimson Text', serif;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-size: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            
+        }
 
-    .navbar-brand,
-    .navbar-nav .nav-link {
-        color: cadetblue;
-        font-weight: bold;
-        font-family: 'Crimson Text', serif;
-    }
+        .logo img {
+            height: 30px; /* Adjust height as needed */
+            margin-right: 10px; /* Add some spacing between logo and text */
+            border-radius: 30px;
+        }
 
-    .logo {
-        max-width: 5%;
-        height: auto;
-        margin-right: 8px;
-    }
+        .menu {
+            list-style: none;
+            display: flex;
+        }
 
-    .navbar-toggler-icon {
-        background-color: cadetblue;
-    }
+        .menu li {
+            margin-right: 20px;
+        }
 
-    .navbar-toggler {
-        border-color: cadetblue;
-    }
+        .menu li a {
+            text-decoration: none;
+            color: #d5cdcd;
+            font-weight: 500;
+            transition: color 0.3s ease; /* Added transition effect */
+        }
 
-    .navbar-toggler:focus,
-    .navbar-toggler:active {
-        outline: none;
-        box-shadow: none;
-    }
+        .menu li a:hover {
+            color: cadetblue; /* Changed color on hover */
+        }
+        .menu li a.active {
+        color: cadetblue; /* Define the active link text color */
+        font-weight: bold; /* Optionally, make the active link bold */
+        }
 
-    .navbar-nav .nav-link {
-        transition: color 0.3s ease-in-out;
-    }
 
-    .navbar-nav .nav-link:hover {
-        color: #fff;
-    }
-
+        .menu li a.login:hover,
+        .menu li a.login.active {
+            color: cadetblue; /* Custom hover and active text color */
+            background-color: transparent; /* Remove background color on hover and active */
+            border-radius: 0; /* Remove border radius on hover and active */
+            padding: 0; /* Remove padding on hover and active */
+        }
     /* Adjust body padding to prevent content from being hidden behind fixed navbar */
     body {
         padding-top: 70px; /* Adjust according to your navbar height */
@@ -108,6 +131,7 @@
             padding: 0;
         }
 
+        
         main {
             padding: 20px;
         }
@@ -137,8 +161,8 @@
         }
 
         .card {
-            width: 250px;
-            padding: 20px;
+            width: 300px;
+            padding: 30px;
             background-color: rgba(245, 242, 242, 0.9);
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
@@ -153,8 +177,8 @@
         .card img {
             width: 100px;
             margin-bottom: 20px;
+            align-items: center;
         }
-
         /* Why Choose Us Section */
         #why-choose-us {
             background: linear-gradient(135deg, #f9f9f9, #e9e9e9);
@@ -211,72 +235,54 @@
             }
         }
 
-        /* Copyright Section */
-    .copyright-section {
-        padding: 20px 0;
-        color: #fff;
-        font-size: 18px;
-        text-align: center;
-       
-    }
 
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-       
-    }
+        .footer {
+            font-family: 'Crimson Text', serif;
+            margin-top: auto; /* Pushes the footer to the bottom */
+            background-color: black;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-top: 50px; /* Added spacing */
+        }
 
-    .social-icons a {
-        color: #fff;
-        font-size: 18px;
-        margin: 0 10px;
-        text-decoration: none;
-    }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
 
-    .social-icons a:hover {
-        color: #007bff;
-    }
+        .social-icons a {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
 
-        
-
+        .social-icons a:hover {
+            color: #007bff;
+        }
 </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Community Event Network</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" id="Home" href="home1.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="About Us" href="aboutus.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Events" href="event.php">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Listing" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" id="Contact Us" href="contactus.html">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Login" href="signin.php">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+ <!-- Navigation Bar -->
+ <nav>
+    <a href="#" class="logo">
+        <img src="https://via.placeholder.com/50" alt="Logo"> <!-- Placeholder image, replace with your actual logo URL -->
+        Community Event Network
+    </a>
+    <ul class="menu">
+        <li><a href="home1.html" class="active">Home</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="aboutus.html" class="active">About Us</a></li>
+        <li><a href="event.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="login.html" class="login">Login</a></li> <!-- Added class "login" for login link -->
+    </ul>
+</nav>
 
     <main>
         <section id="mission">
@@ -284,27 +290,27 @@
             <div class="card-container">
                 <div class="card">
                     <img src="https://cdn-icons-png.flaticon.com/512/1043/1043829.png" alt="Event Icon">
-                    <h3>Diverse Events</h3>
+                    <h3 style="color: #090909">Diverse Events</h3>
                     <p>Experience a wide range of events catering to various interests, from cultural festivals to educational workshops.</p>
                 </div>
                 <div class="card">
                     <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Networking Icon">
-                    <h3>Networking Opportunities</h3>
+                    <h3 style="color: #090909">Networking Opportunities</h3>
                     <p>Connect with like-minded individuals and expand your network through our community-driven events.</p>
                 </div>
                 <div class="card">
                     <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png" alt="Community Engagement Icon">
-                    <h3>Community Engagement</h3>
+                    <h3 style="color: #090909">Community Engagement</h3>
                     <p>Get involved in meaningful community initiatives and contribute to positive change in our society.</p>
                 </div>
                 <div class="card">
                     <img src="https://cdn-icons-png.flaticon.com/512/3745/3745634.png" alt="Collaborative Spirit Icon">
-                    <h3>Collaborative Spirit</h3>
+                    <h3 style="color: #090909">Collaborative Spirit</h3>
                     <p>Join hands with fellow community members and embrace the power of collaboration in achieving common goals.</p>
                 </div>
-                
             </div>
         </section>
+
 
         <!-- Why Choose Us Section -->
         <section id="why-choose-us">
@@ -406,19 +412,16 @@
 </section>
 
 
-   <!-- Copyright Section -->
-   <div class="copyright-section" style="background-color: black;">
-    <div class="container">
-        <div class="social-icons">
-            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p style="color: cadetblue;">&copy; 2024 Community Event Network. All rights reserved.</p>
+<!-- Footer Section -->
+<div class="footer">
+    <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
+    <p style="color: #fff" >&copy; 2024 Community Event Network. All rights reserved.</p>
 </div>
-    
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

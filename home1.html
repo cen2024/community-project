@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Community Event Network - Connecting Communities">
     <meta name="author" content="Community Event Network">
-    <title>Community Event Network</title>
+    <title>Community Event Network  </title>
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- Bootstrap CSS -->
@@ -20,57 +20,86 @@
 
     <!-- Custom styles -->
     <style>
-       .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: black;
-        padding: 15px 0;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000; /* Ensure navbar appears above other content */
-        font-size: 20px;
-    }
+       *:before,
+        *:after {
+            margin-top: auto;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            
+        }
+        /* Navigation bar styles */
+        nav {
+            z-index: 1000;
+            background-color: #000;
+            padding: 10px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Crimson Text', serif;     
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-size: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            
+        }
 
-    .navbar-brand,
-    .navbar-nav .nav-link {
-        color: cadetblue;
-        font-weight: bold;
-        font-family: 'Crimson Text', serif;
-    }
+        .logo img {
+            height: 30px; /* Adjust height as needed */
+            margin-right: 10px; /* Add some spacing between logo and text */
+            border-radius: 30px;
+        }
 
-    .logo {
-        max-width: 5%;
-        height: auto;
-        margin-right: 8px;
-    }
+        .menu {
+            list-style: none;
+            display: flex;
+            
+        }
 
-    .navbar-toggler-icon {
-        background-color: cadetblue;
-    }
+        .menu li {
+            margin-right: 20px;
+        }
 
-    .navbar-toggler {
-        border-color: cadetblue;
-    }
+        .menu li a {
+            text-decoration: none;
+            color: #d5cdcd;
+            font-weight: 700;
+            transition: color 0.3s ease; /* Added transition effect */
+        }
 
-    .navbar-toggler:focus,
-    .navbar-toggler:active {
-        outline: none;
-        box-shadow: none;
-    }
+        .menu li a:hover {
+            color: cadetblue; /* Changed color on hover */
+        }
+        .menu li a.active {
+        color: cadetblue; /* Define the active link text color */
+        font-weight: bold; /* Optionally, make the active link bold */
+        }
 
-    .navbar-nav .nav-link {
-        transition: color 0.3s ease-in-out;
-    }
 
-    .navbar-nav .nav-link:hover {
-        color: #fff;
-    }
+        .menu li a.login:hover,
+        .menu li a.login.active {
+            color: cadetblue; /* Custom hover and active text color */
+            background-color: transparent; /* Remove background color on hover and active */
+            border-radius: 0; /* Remove border radius on hover and active */
+            padding: 0; /* Remove padding on hover and active */
+        }
+
 
     /* Adjust body padding to prevent content from being hidden behind fixed navbar */
     body {
         padding-top: 70px; /* Adjust according to your navbar height */
         background-color: #0e0e0e;
         color: white;
+        
     }
     /* Carousel Section */
     #community-carousel .carousel-item {
@@ -117,38 +146,29 @@
         background-color: #0056b3;
     }
 
-   /* About Section */
-.about-section {
-    background: url('https://picsum.photos/1920/1080') center/cover no-repeat fixed;
-    padding: 100px 0;
-    color: #0e0e0e;
-    font-family: 'Crimson Text', serif;
-    background-color: #f8f9fa; /* Change background color */
-    margin-top: 30px;
-}
+ /* About Section */
+ .about-section {
+            background: url('https://picsum.photos/1920/1080') center/cover no-repeat fixed;
+            padding: 100px 0;
+            color: #0e0e0e;
+            font-family: 'Crimson Text', serif;
+        }
 
-.about-section .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #343a40; /* Change text color */
-    text-align: center;
-  
-}
+        .about-section .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
 
-.about-section .section-content {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: #6c757d; /* Change text color */
-    text-align: center;
-}
+        .about-section .section-content {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
 
-.about-section img {
-    border: 2px solid #343a40; /* Change border color */
-    border-radius: 10px;
-    display: block;
-    margin: 0 auto;
-    max-width: 80%;
-}
+        .about-section img {
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
+
 
     /* Custom CSS for event items */
     .event-item {
@@ -159,7 +179,7 @@
         padding: 15px;
         transition: transform 0.3s ease-in-out;
         background-color: #fff;
-        margin-bottom: 30px;
+        margin-right: 0px;
     }
 
     .event-item img {
@@ -243,38 +263,33 @@
         margin: 0;
     }
 
-    /* Copyright Section */
-    .copyright-section {
-        padding: 20px 0;
-        color: #fff;
-        font-size: 18px;
-        text-align: center;
-        margin-top: 20px;
-    }
+    .footer {
+            font-family: 'Crimson Text', serif;
+            margin-top: auto; /* Pushes the footer to the bottom */
+            background-color: black;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-top: 50px; /* Added spacing */
+        }
 
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
 
-    .social-icons a {
-        color: #fff;
-        font-size: 18px;
-        margin: 0 10px;
-        text-decoration: none;
-    }
+        .social-icons a {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
 
-    .social-icons a:hover {
-        color: #007bff;
-    }
-
-    .highlighted {
-        background-color: #ffc107;
-        color: #000;
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
+        .social-icons a:hover {
+            color: #007bff;
+        }
 </style>
 
 
@@ -283,41 +298,23 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <img src="https://picsum.photos/200" alt="Community Event Network Logo" class="logo">
-            <a class="navbar-brand" href="#">Community Event Network</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" id="Home" href="home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="About Us" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Events" href="event.html">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="gallery" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Contact Us" href="contactus.html">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Login" href="signin.php">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Carousel Section -->
+   
+ <!-- Navigation Bar -->
+ <nav>
+    <a href="#" class="logo">
+        <img src="https://via.placeholder.com/50" alt="Logo"> <!-- Placeholder image, replace with your actual logo URL -->
+        Community Event Network
+    </a>
+    <ul class="menu">
+        <li><a href="home1.html" class="active">Home</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="event.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="login.html">Login</a></li> <!-- Added class "login" for login link -->
+    </ul>
+</nav>
+   <!-- Carousel Section -->
     <section id="community-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -353,40 +350,39 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    </section>
+    </section><br>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2 class="section-title">About Us</h2>
-                    <p class="section-content">Community Event Network is a platform for people to connect, share ideas, and work together to create positive change in their communities. <br>
-                        Our network consists of community leaders, organizations, and individuals who are passionate about making a difference. We provide resources, support, and opportunities for collaboration to help our members achieve their goals and create impact.
-                        Together, we can make a difference and create stronger, more vibrant communities.</p>
-                    <p class="section-content">Since launching our community event network, we have seen incredible growth and engagement.
-                        Our network has also facilitated partnerships between community organizations, businesses, and government agencies, leading to new initiatives and programs that benefit our communities.</p>
-                    <!-- Add community details here -->
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://picsum.photos/854/600?random=4" class="img-fluid rounded" alt="About Us Image">
-                </div>
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-content">Community Event Network is a platform for people to connect, share ideas, and work together to create positive change in their communities. <br>
+                    Our network consists of community leaders, organizations, and individuals who are passionate about making a difference. We provide resources, support, and opportunities for collaboration to help our members achieve their goals and create impact.
+                    Together, we can make a difference and create stronger, more vibrant communities.</p>
+                <p class="section-content">Since launching our community event network, we have seen incredible growth and engagement.
+                    Our network has also facilitated partnerships between community organizations, businesses, and government agencies, leading to new initiatives and programs that benefit our communities.</p>
+                <!-- Add community details here -->
+            </div>
+            <div class="col-lg-6">
+                <img src="https://picsum.photos/854/600?random=4" class="img-fluid rounded" alt="About Us Image">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Events Section -->
-   <!-- Events Section with Carousel -->
+<!-- Events Section -->
 <section id="events" class="events-section">
-    <div class="container "> 
+    <div class="container"><br>
         <h2 class="section-title mb-4 text-center" style="background-color: black;">
             <span class="highlighted">Events</span>
         </h2>
-        <div id="events-carousel" class="carousel slide" data-ride="carousel">
+        <div id="events-carousel" class="carousel slide" data-interval="false">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row">
-                        <div class="col-md-4 event-item">
+                        <div class="col-md-4 event-item active">
                             <img src="https://picsum.photos/800/600?random=5" alt="Event Image">
                             <h3 class="event-title">Kickoff Carnival</h3>
                             <p class="event-details"><i class="fas fa-map-marker-alt"></i> Balewadi High Street, Balewadi, Pune 411045</p>
@@ -452,7 +448,6 @@
                             <p class="event-details">Sub Community: Culinary Arts</p>
                             <p class="event-details">Description: An extravaganza of flavors featuring cuisines from around the world and culinary demonstrations.</p>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -467,65 +462,50 @@
         </div>
     </div>
 </section>
-
-    <!-- Contact Section -->
-    <!-- Contact Section -->
+  <!-- Contact Section -->
 <section id="contact" class="contact-section">
     <div class="container">
         <h2 class="section-title">Contact Us</h2>
         <div class="row">
-            <div class="col-lg-6">
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                        <div class="invalid-feedback">Please enter your name.</div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                        <div class="invalid-feedback">Please enter a valid email address.</div>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
-                        <div class="invalid-feedback">Please enter a message.</div>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-                </form>
+            <div class="col-lg-6 map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.447317578129!2d73.80854827465188!3d18.508677369538564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfa38c3d9713%3A0x829cbebeaa466baa!2sPrime%20Infotech%20Solutions!5e0!3m2!1sen!2sin!4v1708679542836!5m2!1sen!2sin" width="550" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+                    </iframe>
             </div>
-
-
-            <div class="col-lg-6">
-                <div class="contact-info">
-                    <div class="contact-box">
-                        <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
-                        <p>123 Main Street, City, Country</p>
+            <div class="col-lg-6 form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> <b>Name</b></label>
+                        <input type="text" id="name" name="name" placeholder="Name" class="form-control">
                     </div>
-                    <div class="contact-box">
-                        <h3><i class="fas fa-phone"></i> Phone</h3>
-                        <p>+91 1234567890</p>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> <b>Email</b></label>
+                        <input type="email" id="email" name="email" placeholder="Email" class="form-control">
                     </div>
-                    <div class="contact-box">
-                        <h3><i class="fas fa-envelope"></i> Email</h3>
-                        <p>info@example.com</p>
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment"></i> <b>Message</b></label>
+                        <textarea name="message" id="message" rows="5" placeholder="Message" class="form-control"></textarea>
                     </div>
-                </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
 
-   <!-- Copyright Section -->
-<div class="copyright-section" style="background-color: black;">
-    <div class="container">
-        <div class="social-icons">
-            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p style="color: cadetblue;">&copy; 2024 Community Event Network. All rights reserved.</p>
-    </div>
-</div>
 
+   <!-- Footer -->
+ <!-- Footer Section -->
+ <div class="footer">
+    <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2024 Community Event Network. All rights reserved.</p>
+</div>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>

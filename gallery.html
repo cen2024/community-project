@@ -6,84 +6,125 @@
 <title>Gallery</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-FcC5FztpnCfOwPddP6aEiJvxGABG49S3G6qU4vQbsg9G3VIEyd5bJKRuIaM7fu3zjt74bPmB2R9KAMy9zS8dKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<!--Stylesheet-->
 <style>
- .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: black;
-        padding: 15px 0;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000; /* Ensure navbar appears above other content */
-        font-size: 20px;
-    }
 
-    .navbar-brand,
-    .navbar-nav .nav-link {
-        color: cadetblue;
-        font-weight: bold;
-        font-family: 'Crimson Text', serif;
-    }
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
-    .logo {
-        max-width: 5%;
-        height: auto;
-        margin-right: 8px;
-    }
+   /* Navigation bar styles */
+   nav {
+              z-index: 1000;
+            background-color: #000;
+            padding: 10px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Crimson Text', serif;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-size: 20px;
+        }
 
-    .navbar-toggler-icon {
-        background-color: cadetblue;
-    }
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            
+        }
 
-    .navbar-toggler {
-        border-color: cadetblue;
-    }
+        .logo img {
+            height: 30px; /* Adjust height as needed */
+            margin-right: 10px; /* Add some spacing between logo and text */
+            border-radius: 30px;
+        }
 
-    .navbar-toggler:focus,
-    .navbar-toggler:active {
-        outline: none;
-        box-shadow: none;
-    }
+        .menu {
+            list-style: none;
+            display: flex;
+        }
 
-    .navbar-nav .nav-link {
-        transition: color 0.3s ease-in-out;
-    }
+        .menu li {
+            margin-right: 20px;
+        }
 
-    .navbar-nav .nav-link:hover {
-        color: #fff;
-    }
+        .menu li a {
+            text-decoration: none;
+            color: #d5cdcd;
+            font-weight: 500;
+            transition: color 0.3s ease; /* Added transition effect */
+        }
 
-    /* Adjust body padding to prevent content from being hidden behind fixed navbar */
-    body {
-        padding-top: 70px; /* Adjust according to your navbar height */
-        background-color: #0e0e0e;
-        color: white;
-    }
-  .gallery {
+        .menu li a:hover {
+            color: cadetblue; /* Changed color on hover */
+        }
+
+        .menu li a.active {
+            color: cadetblue; /* Set the active link color to cadet blue */
+            font-weight: bold; /* Make the active link bold */
+        }
+
+        .menu li a.login:hover,
+        .menu li a.login.active {
+            color:cadetblue; /* Custom hover and active text color */
+            background-color: transparent; /* Remove background color on hover and active */
+            border-radius: 0; /* Remove border radius on hover and active */
+            padding: 0; /* Remove padding on hover and active */
+        }
+
+
+      
+/* Adjust body padding to prevent content from being hidden behind fixed navbar */
+body {
+    padding-top: 70px; /* Adjust according to your navbar height */
+    background-color: #0e0e0e;
+    color: white;
+    text-align: center;
+}
+
+.gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
-  }
-  .gallery-item {
+    text-align: center;
+}
+
+.gallery-item {
     position: relative;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
-  .gallery-item:hover {
+}
+
+.gallery-item:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
-  }
-  .gallery-item img {
+}
+
+.gallery-item img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
     transition: transform 0.3s ease;
-  }
-  .gallery-item .overlay {
+}
+
+.gallery-item .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -100,82 +141,70 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-  }
-  .gallery-item:hover .overlay {
+}
+
+.gallery-item:hover .overlay {
     opacity: 1;
-  }
-  .gallery-item .overlay h3,
-  .gallery-item .overlay p {
+}
+
+.gallery-item .overlay h3,
+.gallery-item .overlay p {
     margin: 5px 0;
-  }
-  .modal img {
+}
+
+.modal img {
     width: 100%;
     height: auto;
-  }
- 
-   /* Copyright Section */
-   .copyright-section {
-        padding: 20px 0;
-        color: #fff;
-        font-size: 18px;
-        text-align: center;
-    }
+}
 
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
+/* Footer Section */
+.footer {
+    font-family: 'Crimson Text', serif;
+    margin-top: 50px; /* Pushes the footer to the bottom */
+    background-color: black;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
 
-    .social-icons a {
-        color: #fff;
-        font-size: 18px;
-        margin: 0 10px;
-        text-decoration: none;
-    }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
 
-    .social-icons a:hover {
-        color: #007bff;
-    }
+.social-icons a {
+    color: #fff;
+    font-size: 18px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
 
 </style>
 </head>
 <body>
- <!-- Navigation -->
- <nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container">
-      <a class="navbar-brand" href="#">Community Event Network</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                  <a class="nav-link" id="Home" href="home1.html">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" id="About Us" href="aboutus.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" id="Events" href="event.php">Events</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" id="Listing" href="gallery.html">Gallery</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link active" id="Contact Us" href="contactus.html">Contact Us</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" id="Login" href="signin.php">Login</a>
-              </li>
-          </ul>
-      </div>
-  </div>
-</nav>
-
+<!-- Navigation -->
+<nav>
+  <a href="#" class="logo">
+      <img src="https://via.placeholder.com/50" alt="Logo"> <!-- Placeholder image, replace with your actual logo URL -->
+      Community Event Network
+  </a>
+  <ul class="menu">
+      <li><a href="home1.html">Home</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li> <!-- Added "active" class for Gallery -->
+      <li><a href="login.html" class="login">Login</a></li>
+  </ul>
+</nav><br>
 <div class="container">
-  <h1>Our Gallery</h1>
+  <h1><u>OUR GALLERY</u></h1><br>
   <div class="gallery">
     <div class="gallery-item" data-toggle="modal" data-target="#myModal1">
       <img src="https://picsum.photos/400/300?random=1" alt="Image 1">
@@ -279,6 +308,7 @@
 </div>
 
 <!-- Add modals for other events -->
+<!-- Add modals for other events -->
 <div class="modal fade" id="myModal3">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -359,18 +389,17 @@
   </div>
 </div>
 
-  <!-- Copyright Section -->
-<div class="copyright-section" style="background-color: black;">
-  <div class="container">
-      <div class="social-icons">
-          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-      </div>
-      <p style="color: cadetblue;">&copy; 2024 Community Event Network. All rights reserved.</p>
+<!-- Footer Section -->
+<div class="footer">
+  <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
+  <p>&copy; 2024 Community Event Network. All rights reserved.</p>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

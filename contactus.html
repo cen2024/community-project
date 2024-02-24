@@ -22,52 +22,78 @@
 
     <!-- Custom styles -->
     <style>
-        /* Navigation */
-        .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: black;
-        padding: 15px 0;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000; /* Ensure navbar appears above other content */
-        font-size: 20px;
-    }
+      *:before,
+        *:after {
+            margin-top: auto;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /* Navigation bar styles */
+        nav {
+            z-index: 1000;
+            background-color: #000;
+            padding: 10px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Crimson Text', serif;     
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-size: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            
+        }
 
-    .navbar-brand,
-    .navbar-nav .nav-link {
-        color: cadetblue;
-        font-weight: bold;
-        font-family: 'Crimson Text', serif;
-    }
+        .logo img {
+            height: 30px; /* Adjust height as needed */
+            margin-right: 10px; /* Add some spacing between logo and text */
+            border-radius: 30px;
+        }
 
-    .logo {
-        max-width: 5%;
-        height: auto;
-        margin-right: 8px;
-    }
+        .menu {
+            list-style: none;
+            display: flex;
+        }
 
-    .navbar-toggler-icon {
-        background-color: cadetblue;
-    }
+        .menu li {
+            margin-right: 20px;
+        }
 
-    .navbar-toggler {
-        border-color: cadetblue;
-    }
+        .menu li a {
+            text-decoration: none;
+            color: #d5cdcd;
+            font-weight: 500;
+            transition: color 0.3s ease; /* Added transition effect */
+        }
 
-    .navbar-toggler:focus,
-    .navbar-toggler:active {
-        outline: none;
-        box-shadow: none;
-    }
+        .menu li a:hover {
+            color: cadetblue; /* Changed color on hover */
+        }
+        .menu li a.active {
+        color: cadetblue; /* Define the active link text color */
+        font-weight: bold; /* Optionally, make the active link bold */
+        }
 
-    .navbar-nav .nav-link {
-        transition: color 0.3s ease-in-out;
-    }
 
-    .navbar-nav .nav-link:hover {
-        color: #fff;
-    }
+        .menu li a.login:hover,
+        .menu li a.login.active {
+            color: cadetblue; /* Custom hover and active text color */
+            background-color: transparent; /* Remove background color on hover and active */
+            border-radius: 0; /* Remove border radius on hover and active */
+            padding: 0; /* Remove padding on hover and active */
+        }
+
+
         /* Contact Section */
         .contact-section {
             background: url('https://picsum.photos/1920/1080') center/cover no-repeat fixed;
@@ -76,6 +102,7 @@
             font-family: 'Crimson Text', serif;
             display: flex;
             justify-content: center; /* Aligning at the center */
+            font-size: 22px;
         }
 
         .contact-section .container2 {
@@ -108,6 +135,7 @@
             border-radius: 8px;
             border: 1px solid #ccc; /* Border for the box container */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 30px;
         }
 
         /* Additional Styles */
@@ -115,34 +143,32 @@
             margin-bottom: 10px;
         }
 
-       /* Copyright Section */
-    .copyright-section {
-        padding: 20px 0;
-        color: #fff;
-        font-size: 18px;
-        text-align: center;
-    }
+        .footer {
+            font-family: 'Crimson Text', serif;
+            margin-top: auto; /* Pushes the footer to the bottom */
+            background-color: black;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-top: 50px; /* Added spacing */
+        }
 
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .social-icons a {
-        color: #fff;
-        font-size: 18px;
-        margin: 0 10px;
-        text-decoration: none;
-    }
-
-    .social-icons a:hover {
-        color: #007bff;
-    }
-        /* Centering the Button */
-        .center-btn {
+        .social-icons {
             display: flex;
             justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
         }
         
 
@@ -151,94 +177,63 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Community Event Network</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" id="Home" href="home1.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="About Us" href="aboutus.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Events" href="event.php">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Listing" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" id="Contact Us" href="contactus.html">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Login" href="signin.php">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container2">
-            <div class="contact-form">
-                <fieldset>
-                    <h3><b>Contact US</b></h3>
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name"><i class="fas fa-user"></i><b> Name</b></label>
-                            <input type="text" id="name" name="name" placeholder="Name" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="email"><i class="fas fa-envelope"></i> <b>Email</b></label>
-                            <input type="email" id="email" name="email" placeholder="Let me Know how to contact you back.." class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject"><i class="fas fa-pen pen-icon"></i><b> Subject</b></label>
-                            <input type="text" id="subject" name="subject" placeholder="Subject" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="message"><i class="fas fa-comment"></i> <b>Message</b></label>
-                            <textarea name="message" id="msg" cols="30" rows="3" placeholder="Message" class="form-control"></textarea>
-                        </div>
-                        <div class="center-btn"> <!-- Centering the button -->
-                            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i>Send Message</button>
-                        </div>
-                    </form>
-                </fieldset>
-            </div>
-            <div class="contact-info">
-                <h3><b>Contact Information</b></h3>
-                <div class="box-container">
-                    <p><i class="fas fa-map-marker-alt"></i> <strong><b>Address:</b></strong> 123 Main Street, City, Country</p>
-                </div>
-                <div class="box-container">
-                    <p><i class="fas fa-phone"></i> <strong><b>Contact:</b></strong> +123 456 7890</p>
-                </div>
-                <div class="box-container">
-                    <p><i class="fas fa-envelope"></i> <strong><b>Email:</b></strong> info@example.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
+ <!-- Navigation Bar -->
+ <nav>
+    <a href="#" class="logo">
+        <img src="https://via.placeholder.com/50" alt="Logo"> <!-- Placeholder image, replace with your actual logo URL -->
+        Community Event Network
+    </a>
+    <ul class="menu">
+        <li><a href="home1.html">Home</a></li>
+      <li><a href="contactus.html" class="active">Contact Us</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="login.html" >Login</a></li> <!-- Added class "login" for login link -->
+    </ul>
+</nav>
 
-     <!-- Copyright Section -->
-<div class="copyright-section" style="background-color: black;">
+     <!-- Contact Section -->
+<section id="contact" class="contact-section">
     <div class="container">
-        <div class="social-icons">
-            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <h2 class="section-title" style="color: #fefafa">Contact Us</h2>
+        <div class="row">
+            <div class="col-lg-6 map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.447317578129!2d73.80854827465188!3d18.508677369538564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfa38c3d9713%3A0x829cbebeaa466baa!2sPrime%20Infotech%20Solutions!5e0!3m2!1sen!2sin!4v1708679542836!5m2!1sen!2sin" width="550" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+                    </iframe>
+            </div>
+            <div class="col-lg-6 form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> <b>Name</b></label>
+                        <input type="text" id="name" name="name" placeholder="Name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> <b>Email</b></label>
+                        <input type="email" id="email" name="email" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment"></i> <b>Message</b></label>
+                        <textarea name="message" id="message" rows="5" placeholder="Message" class="form-control"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" font-size="22px"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <p style="color: cadetblue;">&copy; 2024 Community Event Network. All rights reserved.</p>
     </div>
+</section>
+<!-- Footer Section -->
+<div class="footer">
+    <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p style="color: #fff" >&copy; 2024 Community Event Network. All rights reserved.</p>
 </div>
     
 

@@ -9,162 +9,361 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Your custom CSS styles here */
-        /* Ensure your styles include proper spacing and alignment */
+        
+    /* Navbar styles */
+  .modal-content {
+    border-radius: 30px; /* Add border-radius for modal box */
+    color: black;
+    font-size: 20px;
+    font-weight: 100;
+}
 
-        /* Navbar styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
+.modal-title{
+    text-align: center;
+    font-style: bold;
+    
+}
+/* Event Section CSS */
+.event-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.event-date,
+.event-venue {
+    margin-bottom: 5px;
+}
+
+.event-description {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+/* Event cards styles */
+.event-item {
+    background-color:#010000; /* Light gray background */
+    border: 5px solid #ff6f61; /* Coral border */
+    border-radius: 10px;
+    padding: 10px; /* Adjusted padding */
+    margin-bottom: 10px; /* Adjust the margin-bottom to reduce space between event items */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+    color: black;
+}
+
+/* Adjust column width to maintain aspect ratio */
+@media (min-width: 768px) {
+    .col-md-2 {
+        flex: 0 0 20%; /* Adjust the width of each column */
+        max-width: 20%;
+    }
+}
+
+.event-info {
+    padding: 15px 20px; /* Adjusted padding */
+    background-color: #f8f9fa;
+    border-radius: 0 0 20px 20px;
+    color: #010000;
+}
+
+/* Navigation styles */
+ nav {
             background-color: black;
-            padding: 15px 0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000; /* Ensure navbar appears above other content */
+            padding: 10px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Crimson Text', serif;
             font-size: 20px;
         }
 
-        .navbar-brand,
-        .navbar-nav .nav-link {
-            color: cadetblue;
-            font-weight: bold;
-            font-family: 'Crimson Text', serif;
-        }
-
         .logo {
-            max-width: 5%;
-            height: auto;
-            margin-right: 8px;
-        }
-
-        .navbar-toggler-icon {
-            background-color: cadetblue;
-        }
-
-        .navbar-toggler {
-            border-color: cadetblue;
-        }
-
-        .navbar-toggler:focus,
-        .navbar-toggler:active {
-            outline: none;
-            box-shadow: none;
-        }
-
-        .navbar-nav .nav-link {
-            transition: color 0.3s ease-in-out;
-        }
-
-        .navbar-nav .nav-link:hover {
+            font-size: 24px;
+            font-weight: 600;
             color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            
         }
 
-        /* Adjust body padding to prevent content from being hidden behind fixed navbar */
-        body {
-            padding-top: 70px; /* Adjust according to your navbar height */
-            background-color: #0e0e0e;
-            color: white;
+        .logo img {
+            height: 40px; /* Adjust height as needed */
+            margin-right: 10px; /* Add some spacing between logo and text */
+            border-radius: 30px;
         }
 
-        /* Event cards styles */
-        .event-item {
-            margin-bottom: 30px;
-            margin-top: 20px;
+        .menu {
+            list-style: none;
+            display: flex;
         }
 
-    .event-image {
-    width :75%;
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #d5cdcd;
+            font-weight: 500;
+            transition: color 0.3s ease; /* Added transition effect */
+        }
+
+        .menu li a:hover {
+            color: cadetblue; /* Changed color on hover */
+        }
+        .menu li a.active {
+        color: cadetblue; /* Define the active link text color */
+        font-weight: bold; /* Optionally, make the active link bold */
+        }
+
+
+        .menu li a.login:hover,
+        .menu li a.login.active {
+            color: cadetblue; /* Custom hover and active text color */
+            background-color: transparent; /* Remove background color on hover and active */
+            border-radius: 0; /* Remove border radius on hover and active */
+            padding: 0; /* Remove padding on hover and active */
+        }
+         /* Footer Section */
+         .footer {
+            font-family: 'Crimson Text', serif;
+            margin-top: auto; /* Pushes the footer to the bottom */
+            background-color: black;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-top: 50px; /* Added spacing */
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+/* Event cards styles */
+.view-details-btn {
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+.close-btn
+{
+ font-size: 14px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  color: #010000;
+}
+.highlight {
+    border: 4px solid white; /* Add a border to highlight */
+}
+
+.fade-out {
+    opacity: 0.25; /* Reduce opacity to fade out */
+}
+
+/* Style for upcoming events heading */
+
+.upcoming-event{
+background-color:black;
+
+}
+.upcoming-events-heading {
+    text-align: center; /* Center the heading */
+    margin-top: 50px; /* Add space above the heading */
+    margin-bottom: 30px; /* Add space below the heading */
+}
+/* Additional styling for the carousel */
+.owl-carousel .owl-item {
+    display: block; /* Display carousel items as blocks */
+    margin: 0 auto; /* Center the carousel items horizontally */
+    width: 80%; /* Adjust the width of the carousel items */
+    max-width: 300px; /* Set a maximum width for the carousel items */
+}
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%; /* Make sure images fill the carousel item */
     height: auto;
-    border-radius: 20px 20px 0 0;
-    max-height: 150px; /* Adjust maximum height of the image */
+    border-radius: 10px; /* Add border-radius to images */
 }
 
-        .event-info {
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 0 0 10px 10px;
-        }
+.upcoming-event .event-item {
+    margin-top: 20px;
+    /* margin: 10px 35px; Equal margin on top and bottom, 0 margin on left and right */
+    border-radius: 20px;
+    overflow: hidden;
+    border-width: 5px;
+    width: 400px;
+    height: 470px;
+    margin-left: auto; /* Aligns the card to the center horizontally */
+    margin-right: auto; /* Aligns the card to the center horizontally */
+}
 
-        .event-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: black;
-        }
+.upcoming-event .event-item:hover {
+    background-color: #f8f9fa; /* Change background color to highlight */
+    border: 2px solid #007bff; /* Add a border to highlight */
+    transition: background-color 0.3s ease, border 0.3s ease; /* Add transition effect */
+}
 
-        .event-details {
-            font-size: 0.9rem;
-            color: #6c757d;
-            margin-bottom: 10px;
-        }
+.navbar {
+    background-color: #333; /* Dark navbar background */
+  }
 
-    
-@media (max-width: 768px) {
-    .event-item {
-        width: calc(50% - 20px); /* Adjust width for smaller screens */
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: #fff !important; /* White navbar text color */
+    font-weight: 200;
+    font-size: 18px;
+  }
+
+  .navbar-brand:hover,
+  .navbar-nav .nav-link:hover {
+    color: cadetblue !important; /* Coral color on hover */
+  }
+
+  /* Background styles */
+  body {
+    background-color:black ;/* Light gray background */
+    color:  white; /* Dark gray text color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Container styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* White container background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  /* Upcoming events heading styles */
+  /* .upcoming-events-heading {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ff6f61; /* Coral text color */
+   
+
+
+  /* Event item styles */
+  .event-item {
+    background-color: #010000; /* Light gray background */
+    border: 2px solid #055757; /* Coral border */
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+  }
+
+  .event-item:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+  }
+
+  /* Event title styles */
+  .event-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Dark gray text color */
+  }
+
+  /* Event details styles */
+  .event-details {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #555; /* Medium gray text color */
+  }
+
+  /* Event description styles */
+  .event-description {
+    font-size: 16px;
+    color: #777; /* Light gray text color */
+  }
+
+  /* Event status styles */
+  .event-status {
+    font-size: 16px;
+    font-style: italic;
+    color: #999; /* Lighter gray text color */
+  }
+
+  /* Carousel control styles */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #118276; /* Coral color for carousel controls */
+  }
+
+  /* Carousel indicators styles */
+  .carousel-indicators li {
+    background-color: #205c98; /* Coral color for carousel indicators */
+  }
+
+  /* Upcoming events heading styles */
+  .upcoming-events-heading {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #126a9c; /* Red text color */
+    animation: pulse 1s infinite alternate;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); /* Text shadow for emphasis */
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(1);
     }
-}
-
-@media (max-width: 576px) {
-    .event-item {
-        width: 100%; /* Full width for extra small screens */
-        margin-right: 0; /* No margin between cards */
+    to {
+      transform: scale(1.05);
     }
-}
-
-        /* Modal styles */
-        .modal-header,
-        .modal-footer {
-            background-color: #343a40;
-            color: white;
-        }
-
-        .modal-body {
-            background-color: #f8f9fa;
-            color: #212529;
-        }
+  }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <img src="https://picsum.photos/200" alt="Community Event Network Logo" class="logo">
-            <a class="navbar-brand" href="#">Community Event Network</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" id="Home" href="home1.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="About Us" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Events" href="event.php">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="gallery" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Contact Us" href="contactus.html">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Login" href="signin.php">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Event cards for Events section -->
+    <!-- Navigation Bar -->
+ <nav>
+    <a href="#" class="logo">
+        <img src="https://via.placeholder.com/50" alt="Logo"> <!-- Placeholder image, replace with your actual logo URL -->
+        Community Event Network
+    </a>
+    <ul class="menu">
+        <li><a href="home1.html">Home</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="event.html" class="active">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="login.html">Login</a></li> <!-- Added class "login" for login link -->
+    </ul>
+</nav>    <!-- Event cards for Events section -->
     <div class="row">
         <div class="col-md-4">
         <div class="card event-item">
-            <img src="https://picsum.photos/800/600?random=5" alt="Event Image">
+            <img src="./color-2261009_960_720.jpg" alt="Event Image" style="height: 250px;">
             <div class="card-body event-info">
                 <h5 class="card-title event-title">Kickoff Carnival</h5>
                 <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>Balewadi High Street, Balewadi, Pune 411045</p>
@@ -173,13 +372,10 @@
             </div>
         </div>
     </div>
-
-    
     <!-- Second Event -->
-  
     <div class="col-md-4">
         <div class="card event-item">
-            <img src="https://picsum.photos/800/600?random=6" alt="Event Image">
+            <img src="./istockphoto-1199705901-612x612.jpg" alt="Event Image" style="height: 250px;">
             <div class="card-body event-info">
                 <h5 class="card-title event-title">Artistry Unleashed</h5>
                 <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>Darpan Art Gallery, SB Road, Pune 411016</p>
@@ -188,13 +384,10 @@
             </div>
         </div>
     </div>
-
-    
     <!-- Third Event -->
-
     <div class="col-md-4">
         <div class="card event-item">
-            <img src="https://picsum.photos/800/600?random=7" alt="Event Image">
+            <img src="./istockphoto-1427848310-612x612.jpg" alt="Event Image" style="height: 250px;">
             <div class="card-body event-info">
                 <h5 class="card-title event-title">Code Connect</h5>
                 <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>Hyatt Pune, Kalyani Nagar, Pune 411006</p>
@@ -203,13 +396,10 @@
             </div>
         </div>
     </div>
-
-    
-    <!-- Fourth Event -->
-
+   <!-- Fourth Event -->
     <div class="col-md-4">
         <div class="card event-item">
-            <img src="https://picsum.photos/800/600?random=8" alt="Event Image">
+            <img src="./istockphoto-1472932742-2048x2048.jpg" alt="Event Image" style="height: 250px;">
             <div class="card-body event-info">
                 <h5 class="card-title event-title">Music Festival</h5>
                 <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>City Park, Downtown, Pune 411001</p>
@@ -218,13 +408,10 @@
             </div>
         </div>
     </div>
-
-    
     <!-- Fifth Event -->
-    
     <div class="col-md-4">
         <div class="card event-item">
-            <img src="https://picsum.photos/800/600?random=9" alt="Event Image">
+            <img src="./istockphoto-813460430-612x612.jpg" alt="Event Image" style="height: 250px;">
             <div class="card-body event-info">
                 <h5 class="card-title event-title">Community Picnic</h5>
                 <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>Central Park, Koregaon Park, Pune 411001</p>
@@ -233,11 +420,10 @@
             </div>
         </div>
     </div>
-
     <div class="col-md-4">
         <div class="card event-item">
             <!-- Event Card Content -->
-            <img src="https://picsum.photos/800/600?random=10" alt="Event Image">
+            <img src="./istockphoto-665393236-612x612.jpg" alt="Event Image" style="height: 250px;">
             <div class="card-body event-info">
                 <h5 class="card-title event-title">Food Festival</h5>
                 <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>Food Street, Koregaon Park, Pune 411003</p>
@@ -246,8 +432,120 @@
             </div>
         </div>
     </div>
-  
-
+   <!-- Upcoming Events Section -->
+   <div class="container upcoming-event">
+    <h2 class="upcoming-events-heading">Upcoming Events</h2>
+    <div id="upcomingEventCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row justify-content-center">
+                    <!-- First Event -->
+                    <div class="col-md-4">
+                        <div class="card event-item mb-4">
+                            <img src="./59_Original.jpg" class="card-img-top" alt="Event Image">
+                            <div class="card-body event-info">
+                                <h5 class="card-title event-title">Mixed Art Open Mic</h5>
+                                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i> Balewadi, Pune 411045</p>
+                                <p class="card-text event-details"><i class="far fa-calendar-alt"></i> 26 Feb 2024</p>
+                                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Mixed Art Open Mic" data-event-date="26 Feb 2024" data-event-venue="3rd Floor, A building, Sai Silicon Valley, opposite C M International School, Balewadi, Pune, Maharashtra 411045" data-event-status="Enabled" data-event-community="Cultural" data-event-subcommunity="Comedy" data-event-description="The Comedy Clubhouse presents: Mixed Art Open Mic-">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center">
+                    <!-- Second Event -->
+                    <div class="col-md-4">
+                        <div class="card event-item mb-4">
+                            <img src="./mqdefault.jpg" class="card-img-top" alt="Event Image">
+                            <div class="card-body event-info">
+                                <h5 class="card-title event-title">Street Photography</h5>
+                                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i> Shukrawar Peth, Pune 411002</p>
+                                <p class="card-text event-details"><i class="far fa-calendar-alt"></i> Feb 25 2024</p>
+                                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Street Photography" data-event-date=" Feb 25 2024" data-event-venue="Mandai Market, 1/2, Amrale Rd, Mandai, Shukrawar Peth, Pune, Maharashtra 411002, India" data-event-status="Enabled" data-event-community="Cultural" data-event-subcommunity="Photography" data-event-description="Street photography is one of the most common and most challenging with the final image a testimony to the photographer’s aesthetics and eye for detail">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center">
+                    <!-- Second Event -->
+                    <div class="col-md-4">
+                        <div class="card event-item mb-4">
+                            <img src="./food-fest.jpg" class="card-img-top" alt="Event Image">
+                            <div class="card-body event-info">
+                                <h5 class="card-title event-title">Awadhi Food Festival</h5>
+                                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>The Community Table, Pune</p>
+                                <p class="card-text event-details"><i class="far fa-calendar-alt"></i> Feb 28 2024</p>
+                                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Street Photography" data-event-date=" Feb 25 2024" data-event-venue="Mandai Market, 1/2, Amrale Rd, Mandai, Shukrawar Peth, Pune, Maharashtra 411002, India" data-event-status="Enabled" data-event-community="Cultural" data-event-subcommunity="Photography" data-event-description="Street photography is one of the most common and most challenging with the final image a testimony to the photographer’s aesthetics and eye for detail">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center">
+                    <!-- Second Event -->
+                    <div class="col-md-4">
+                        <div class="card event-item mb-4">
+                            <img src="./59_Original.jpg" class="card-img-top" alt="Event Image">
+                            <div class="card-body event-info">
+                                <h5 class="card-title event-title">Music Concert</h5>
+                                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i>ABC Auditorium, Pune</p>
+                                <p class="card-text event-details"><i class="far fa-calendar-alt"></i>  5 March 2024</p>
+                                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Street Photography" data-event-date=" Feb 25 2024" data-event-venue="Mandai Market, 1/2, Amrale Rd, Mandai, Shukrawar Peth, Pune, Maharashtra 411002, India" data-event-status="Enabled" data-event-community="Cultural" data-event-subcommunity="Photography" data-event-description="Experience the magic of live music at our upcoming concert featuring renowned artists from around the globe">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center">
+                    <!-- Second Event -->
+                    <div class="col-md-4">
+                        <div class="card event-item mb-4">
+                            <img src="./istockphoto-1472932742-2048x2048.jpg" class="card-img-top" alt="Event Image">
+                            <div class="card-body event-info">
+                                <h5 class="card-title event-title">Yoga Retreaty</h5>
+                                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i> Shukrawar Peth, Pune 411002</p>
+                                <p class="card-text event-details"><i class="far fa-calendar-alt"></i> Feb 25 2024</p>
+                                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Street Photography" data-event-date=" Feb 25 2024" data-event-venue="Mandai Market, 1/2, Amrale Rd, Mandai, Shukrawar Peth, Pune, Maharashtra 411002, India" data-event-status="Enabled" data-event-community="Cultural" data-event-subcommunity="Photography" data-event-description="Street photography is one of the most common and most challenging with the final image a testimony to the photographer’s aesthetics and eye for detail">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center">
+                    <!-- Second Event -->
+                    <div class="col-md-4">
+                        <div class="card event-item mb-4">
+                            <img src="./mqdefault.jpg" class="card-img-top" alt="Event Image">
+                            <div class="card-body event-info">
+                                <h5 class="card-title event-title">Street Photography</h5>
+                                <p class="card-text event-details"><i class="fas fa-map-marker-alt"></i> Shukrawar Peth, Pune 411002</p>
+                                <p class="card-text event-details"><i class="far fa-calendar-alt"></i> Feb 25 2024</p>
+                                <a href="#" class="btn btn-primary view-details-btn" data-toggle="modal" data-target="#eventDetailsModal" data-event-title="Street Photography" data-event-date=" Feb 25 2024" data-event-venue="Mandai Market, 1/2, Amrale Rd, Mandai, Shukrawar Peth, Pune, Maharashtra 411002, India" data-event-status="Enabled" data-event-community="Cultural" data-event-subcommunity="Photography" data-event-description="Street photography is one of the most common and most challenging with the final image a testimony to the photographer’s aesthetics and eye for detail">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more carousel items for additional events -->
+        </div>
+        <!-- Carousel Controls -->
+        <a class="carousel-control-prev" href="#upcomingEventCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#upcomingEventCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
     <!-- Modal -->
     <div class="modal fade" id="eventDetailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -268,10 +566,20 @@
                     <p id="modal-event-description">Description: </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer">
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Community Event Network. All rights reserved.</p>
     </div>
 
     <!-- Bootstrap JS -->
@@ -300,5 +608,22 @@
             });
         });
     </script>
+    <script>
+   $(document).ready(function() {
+    $(".owl-carousel").owlCarousel({
+        items: 1, // Display one slide at a time
+        loop: false, // Disable looping
+        margin: 20, // Add margin between slides
+        nav: true, // Enable navigation arrows
+        dots: false, // Disable navigation dots
+    });
+});
+</script>
+<!-- Owl Carousel JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 </body>
 </html>
